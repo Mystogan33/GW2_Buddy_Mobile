@@ -1,14 +1,14 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar color="secondary">
+    <ion-toolbar color="dark">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content style="background-color: #222;">
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button style="color: #f53d3d; background-color: #222;" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <b>{{p.title}}</b>
       </button>
     </ion-list>
   </ion-content>
