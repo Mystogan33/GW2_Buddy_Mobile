@@ -1,18 +1,34 @@
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="danger">
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title>Accueuil</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-list no-lines>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-item>
+        <ion-label class="label labelConnexion" floating><b>Entrez votre clé d'activation : </b></ion-label>
+        <ion-input [(ngModel)]="appKey" type="text" danger></ion-input>
+      </ion-item>
+
+      <ion-item class="item item-trns">
+        <button ion-button color="danger" (click)="getAccount()" large>Valider</button>
+      </ion-item>
+
+    </ion-list>
+
 </ion-content>

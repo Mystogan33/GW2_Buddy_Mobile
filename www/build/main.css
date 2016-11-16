@@ -19648,11 +19648,31 @@ page-pageAccueil ion-navbar {
   text-align: center;
 }
 
+page-pageAccueil .item.item-trns {
+  border-color: transparent;
+  background-color: transparent;
+  text-align: center;
+}
+
 page-pageAccueil ion-content {
   background: url("../assets/img/background.jpg") no-repeat center center fixed;
+  -ms-background-size: cover;
   background-size: cover;
 }
 
 page-pageListePersonnages ion-navbar {
   text-align: center;
+}
+
+page-pageListePersonnages ion-content {
+  background: url("../assets/img/ListePersonnages.jpg") no-repeat center center fixed;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+page-pageListePersonnages .item.item-trns {
+  border-color: transparent;
+  background-color: transparent;
+  text-align: center;
+  color: #387ef5;
 }

@@ -4,11 +4,20 @@ page-pageAccueil {
     text-align: center;
   }
 
+  .item.item-trns {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+
+ }
+
   ion-content {
     background: url('../assets/img/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
+    -ms-background-size: cover;
     background-size: cover;
+
   }
 
 }
