@@ -1,7 +1,16 @@
-page-pageAccueil {
+page-page-account {
 
   ion-navbar {
     text-align: center;
+  }
+
+  .title {
+    color : color($colors,dark);
+  }
+
+  .custom-class-divider {
+    color: color($colors,dark);
+    background-color: color($colors,danger);
   }
 
   ion-content {

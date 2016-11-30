@@ -3,12 +3,14 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { pageAccueil } from '../pages/page-accueil/pageAccueil';
 import { pageListePersonnages } from '../pages/page-liste-personnages/pageListePersonnages';
+import { AccountPage } from '../pages/page-account/page-account';
 
 @NgModule({
   declarations: [
     MyApp,
     pageAccueil,
-    pageListePersonnages
+    pageListePersonnages,
+    AccountPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,7 +19,8 @@ import { pageListePersonnages } from '../pages/page-liste-personnages/pageListeP
   entryComponents: [
     MyApp,
     pageAccueil,
-    pageListePersonnages
+    pageListePersonnages,
+    AccountPage
   ],
   providers: []
 })

@@ -5,9 +5,12 @@
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-title>Accueuil</ion-title>
+    <ion-title>Accueil</ion-title>
 
     <ion-buttons right>
+      <button ion-button icon-only (click)="enterKey()">
+        <ion-icon name="key"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="logOut()">
         <ion-icon name="log-out"></ion-icon>
       </button>
@@ -17,18 +20,5 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-list no-lines>
-
-      <ion-item>
-        <ion-label class="label labelConnexion" floating><b>Entrez votre clé d'activation : </b></ion-label>
-        <ion-input [(ngModel)]="appKey" type="text" danger></ion-input>
-      </ion-item>
-
-      <ion-item class="item item-trns">
-        <button ion-button color="danger" (click)="getAccount()" large>Valider</button>
-      </ion-item>
-
-    </ion-list>
 
 </ion-content>

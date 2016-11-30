@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar color="danger">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Mon Compte</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item color="danger">
+      <ion-avatar item-left>
+        <img src="assets/img/ListePersonnages.jpg">
+      </ion-avatar>
+      <h2 class="title"><b>{{AccountName}}</b></h2>
+    </ion-item>
+
+    <div style="position: relative">
+      <img src="assets/img/ListePersonnages.jpg">
+    </div>
+
+      <ion-item-group>
+        <ion-item-divider class="custom-class-divider"><b>Mes informations générales</b></ion-item-divider>
+
+        <ion-item>
+          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+          <h2> <b> Créé le :</b> {{AccountCreation}} </h2>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+          <h2> <b> Accès à : </b> {{hasExtension()}} </h2>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+          <h2> <b> Commandant :</b> {{isCommander()}} </h2>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+          <h2> <b> Niveau de fractale :</b> {{AccountFractalLevel}} </h2>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+          <h2> <b> Rang McM :</b> {{AccountWvWRank}} </h2>
+        </ion-item>
+      </ion-item-group>
+
+      <ion-item-group>
+        <ion-item-divider class="custom-class-divider"><b>Mes guildes</b></ion-item-divider>
+        <button ion-item *ngFor="let guild of GuildsInformations">
+          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+          <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
+        </button>
+      </ion-item-group>
+
+  </ion-card>
+</ion-content>

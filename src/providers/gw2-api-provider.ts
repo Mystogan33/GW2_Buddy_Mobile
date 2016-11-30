@@ -6,24 +6,33 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class GW2APIProvider {
 
+  appKey : any;
+
   constructor(public http: Http) {
+
+    this.appKey = localStorage.getItem('appKey');
 
   }
 
-  getAccount(appKey): Observable<any> {
+  getAccount(): Observable<any> {
 
-    console.log(appKey);
-    return this.http.get('https://api.guildwars2.com/v2/account?access_token='+appKey)
+    return this.http.get('https://api.guildwars2.com/v2/account?access_token='+this.appKey)
     .map(res => res.json());
 
-    }
+  }
 
-  getCharacters(appKey): Observable<any> {
+  getCharacters(): Observable<any> {
 
-      console.log(appKey);
-      return this.http.get('https://api.guildwars2.com/v2/characters?access_token='+appKey)
-      .map(res => res.json());
+    return this.http.get('https://api.guildwars2.com/v2/characters?access_token='+this.appKey)
+    .map(res => res.json());
 
-      }
+  }
+
+  getGuildInformations(idGuild): Observable<any> {
+
+    return this.http.get('https://api.guildwars2.com/v2/guild/'+idGuild+'?access_token='+this.appKey)
+    .map(res => res.json());
+
+  }
 
 }

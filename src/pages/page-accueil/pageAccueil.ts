@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GW2APIProvider } from '../../providers/gw2-api-provider'
-import { NavController } from 'ionic-angular';
+import { NavController , AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-pageAccueil',
@@ -11,62 +11,54 @@ export class pageAccueil {
 
   appKey : any;
 
-  constructor(public navCtrl: NavController , public service : GW2APIProvider) {
+  constructor(public navCtrl: NavController , public alertCtrl : AlertController ,public service : GW2APIProvider) {
+
+    this.isConnected();
+  }
+
+  isConnected() {
+    
+    if(localStorage.getItem('appKey')== null)
+    {
+      this.enterKey();
+    }
 
   }
 
-  getAccount() {
+  enterKey() {
+    let prompt = this.alertCtrl.create({
+      title: 'Clé d\'authentification',
+      inputs: [
+        {
+          name: 'keyField',
+          placeholder: 'Clé d\'application'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Enregistrer',
+          handler: data => {
+            localStorage.setItem('appKey',data.keyField);
+            alert('Clé entrée avec succès !');
+          }
+        }
+      ]
+    });
 
-    this.service.getAccount(this.appKey).subscribe(
-
-      data => {
-
-      console.log(data.name);
-
-      },
-      err => {
-
-      console.log("Erreur d'authentification")
-
-    },
-      () => console.log("Connexion établie")
-    );
-
-    this.service.getCharacters(this.appKey).subscribe(
-
-      data => {
-
-      console.log(data.name);
-
-      },
-      err => {
-
-      console.log("Erreur d'authentification")
-
-    },
-      () => console.log("Connexion établie")
-    );
-
-    this.getCharacters();
+    prompt.present();
 
   }
 
-  getCharacters() {
+  logOut(){
 
-    this.service.getCharacters(this.appKey).subscribe(
+    localStorage.removeItem('appKey');
 
-      data => {
-
-      console.log(data);
-
-      },
-      err => {
-
-      console.log("Erreur d'authentification")
-
-    },
-      () => console.log("Connexion établie")
-    );
   }
 
 }
