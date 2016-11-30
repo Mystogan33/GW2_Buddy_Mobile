@@ -15,7 +15,7 @@ export class GuildPage {
 
   constructor(public navCtrl: NavController , public navParams: NavParams, public serv: GW2APIProvider) {
 
-    this.guildName = this.navParams.get('item');
+    this.guildName = this.navParams.get('idGuild');
   }
 
 
