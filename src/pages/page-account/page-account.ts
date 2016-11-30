@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GW2APIProvider } from '../../providers/gw2-api-provider';
+import { GuildPage } from '../guild-page/guild-page';
 
 @Component({
   selector: 'page-page-account',
@@ -41,7 +42,7 @@ export class AccountPage {
 
         for(var i = 0 ; i < this.AccountGuilds.length ; i++)
         {
-          this.getGuildInformations(this.AccountGuilds[i]);
+          this.getGuildName(this.AccountGuilds[i]);
         }
 
         this.AccountCreation = data.created;
@@ -90,7 +91,7 @@ export class AccountPage {
 
   }
 
-  getGuildInformations(idGuild)
+  getGuildName(idGuild)
   {
     this.serv.getGuildInformations(idGuild).subscribe(
 
@@ -106,6 +107,11 @@ export class AccountPage {
 
       },
     );
+  }
+
+  getGuild(guild)
+  {
+    this.navCtrl.push(GuildPage , { id : guild});
   }
 
 }

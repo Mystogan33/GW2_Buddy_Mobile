@@ -61,7 +61,7 @@
 
       <ion-item-group>
         <ion-item-divider class="custom-class-divider"><b>Mes guildes</b></ion-item-divider>
-        <button ion-item *ngFor="let guild of GuildsInformations">
+        <button ion-item *ngFor="let guild of GuildsInformations" (click)="getGuild(guild)">
           <ion-icon name = "game-controller-b" item-left large></ion-icon>
           <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
         </button>
