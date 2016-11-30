@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
-import {GW2APIProvider}
+import {GW2APIProvider} from '../../providers/gw2-api-provider';
 
 @Component({
   selector: 'page-pageListePersonnages',
@@ -25,7 +25,6 @@ export class pageListePersonnages {
 
   getCharacters()
   {
-    this.serv.
   }
 
 }

@@ -23,18 +23,51 @@
     <img src="assets/img/ListePersonnages.jpg">
   </div>
 
-    <ion-item-group>
-  <ion-item-divider class="custom-class-divider"><b>Mes informations générales</b></ion-item-divider>
-</ion-item-group>
+  <ion-item-group>
+    
+    <ion-item-divider class="custom-class-divider"><b>Mes informations générales</b></ion-item-divider>
 
-<ion-item>
-  <ion-icon name = "game-controller-b" item-left large></ion-icon>
-  <h2> <b> Créé le :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
-</ion-item>
 
-<button ion-item *ngFor="let guild of GuildsInformations" (click)="getGuild(guild)">
-  <ion-icon name = "game-controller-b" item-left large></ion-icon>
-  <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
-</button>
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Tag de guilde :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Niveau de la guilde :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Message de guilde :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Influence :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Aetherium :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Resonance :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Faveur :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+    <button ion-item *ngFor="let guild of GuildsInformations" (click)="getGuild(guild)">
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
+    </button>
+
+  </ion-item-group>
 
 </ion-content>
