@@ -4,13 +4,15 @@ import { MyApp } from './app.component';
 import { pageAccueil } from '../pages/page-accueil/pageAccueil';
 import { pageListePersonnages } from '../pages/page-liste-personnages/pageListePersonnages';
 import { AccountPage } from '../pages/page-account/page-account';
+import { GuildPage } from '../pages/guild-page/guild-page';
 
 @NgModule({
   declarations: [
     MyApp,
     pageAccueil,
     pageListePersonnages,
-    AccountPage
+    AccountPage,
+    GuildPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,7 +22,8 @@ import { AccountPage } from '../pages/page-account/page-account';
     MyApp,
     pageAccueil,
     pageListePersonnages,
-    AccountPage
+    AccountPage,
+    GuildPage
   ],
   providers: []
 })

@@ -19644,6 +19644,10 @@ sub {
   }
 }
 
+page-guild-page ion-navbar {
+  text-align: center;
+}
+
 page-page-account ion-navbar {
   text-align: center;
 }

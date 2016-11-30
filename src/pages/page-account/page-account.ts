@@ -111,7 +111,7 @@ export class AccountPage {
 
   getGuild(guild)
   {
-    this.navCtrl.push(GuildPage , { id : guild});
+    this.navCtrl.push(GuildPage , {item : guild});
   }
 
 }

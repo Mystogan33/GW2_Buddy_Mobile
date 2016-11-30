@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController ,  NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-guild-page',
@@ -7,10 +7,15 @@ import { NavController } from 'ionic-angular';
 })
 export class GuildPage {
 
-  constructor(public navCtrl: NavController) {}
+  guildName : any;
 
-  ionViewDidLoad() {
-    
+  constructor(public navCtrl: NavController , public navParams: NavParams) {
+
+    this.guildName = this.navParams.get('item');
   }
 
+
+  logOut(){
+    localStorage.removeItem('appKey');
+  }
 }
