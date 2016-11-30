@@ -12,10 +12,11 @@ export class GuildPage {
   constructor(public navCtrl: NavController , public navParams: NavParams) {
 
     this.guildName = this.navParams.get('item');
-  }
 
+  }
 
   logOut(){
     localStorage.removeItem('appKey');
   }
+
 }

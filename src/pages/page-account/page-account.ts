@@ -17,7 +17,7 @@ export class AccountPage {
   AccountWorld : any;
 
   AccountGuilds : any;
-  GuildsInformations : Array<{name : string , tag : string}> = [];
+  GuildsInformations : Array<{name : string , tag : string , id : string}> = [];
 
   AccountCreation : any;
   AccountExtension : any;
@@ -97,7 +97,7 @@ export class AccountPage {
 
       data => {
 
-        this.GuildsInformations.push({name : data.name , tag: data.tag});
+        this.GuildsInformations.push({name : data.name , tag: data.tag , id : data.id});
 
       },
 
