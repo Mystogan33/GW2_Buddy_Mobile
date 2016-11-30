@@ -19648,6 +19648,21 @@ page-guild-page ion-navbar {
   text-align: center;
 }
 
+page-guild-page .title {
+  color: #222;
+}
+
+page-guild-page .custom-class-divider {
+  color: #222;
+  background-color: #f53d3d;
+}
+
+page-guild-page ion-content {
+  background: url("../assets/img/background.jpg") no-repeat center center fixed;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
 page-page-account ion-navbar {
   text-align: center;
 }
