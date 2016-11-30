@@ -24,43 +24,50 @@
   </div>
 
   <ion-item-group>
-    
+
     <ion-item-divider class="custom-class-divider"><b>Mes informations générales</b></ion-item-divider>
 
 
     <ion-item>
       <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Tag de guilde :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+      <h2> <b> Tag de guilde :</b> {{tag}} </h2> <!-- c'est pas fini -->
     </ion-item>
 
     <ion-item>
       <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Niveau de la guilde :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+      <h2> <b> Niveau de la guilde :</b> {{lvl}} </h2> <!-- c'est pas fini -->
+    </ion-item>
+
+
+    <ion-item text-wrap>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Message de guilde :</b></h2> <!-- c'est pas fini -->
+      <ion-card-content>
+        <p>
+         {{msg}}
+       </p>
+      </ion-card-content>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2> <b> Influence :</b> {{influ}} </h2> <!-- c'est pas fini -->
     </ion-item>
 
     <ion-item>
       <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Message de guilde :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+      <h2> <b> Aetherium :</b> {{aether}} </h2> <!-- c'est pas fini -->
     </ion-item>
 
     <ion-item>
       <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Influence :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+      <h2> <b> Resonance :</b> {{rez}} </h2> <!-- c'est pas fini -->
     </ion-item>
 
     <ion-item>
       <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Aetherium :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Resonance :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name = "game-controller-b" item-left large></ion-icon>
-      <h2> <b> Faveur :</b> {{YoloTest}} </h2> <!-- c'est pas fini -->
+      <h2> <b> Faveur :</b> {{faveur}} </h2> <!-- c'est pas fini -->
     </ion-item>
 
     <button ion-item *ngFor="let guild of GuildsInformations" (click)="getGuild(guild)">
