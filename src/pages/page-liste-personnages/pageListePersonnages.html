@@ -1,12 +1,26 @@
 <ion-header>
   <ion-navbar color="primary">
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title>Liste des personnages</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  
+  <ion-list>
+    <button ion-item *ngFor="let character of characters" (click)="getCharacter(character)">
+      <ion-icon name = "game-controller-b" item-left large></ion-icon>
+      <h2><b>{{character}}</b></h2>
+    </button>
+  </ion-list>
 </ion-content>

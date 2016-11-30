@@ -10,9 +10,9 @@ import {GW2APIProvider} from '../../providers/gw2-api-provider';
   providers: [GW2APIProvider]
 })
 export class pageListePersonnages {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+
+
+  characters: Array<{nom: string}> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public serv : GW2APIProvider) {
 
@@ -20,11 +20,22 @@ export class pageListePersonnages {
 
   }
 
-  itemTapped(event, item) {
-  }
-
   getCharacters()
   {
+    this.serv.getCharacters().subscribe(
+
+      data => {
+
+        this.characters = data;
+
+      },
+
+      err => {
+
+        alert(err);
+
+      },
+    );
   }
 
 }
