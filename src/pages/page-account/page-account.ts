@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GW2APIProvider } from '../../providers/gw2-api-provider';
 import { GuildPage } from '../guild-page/guild-page';
+import { PagePersonnagePage } from '../page-personnage/pagePersonnage';
 
 @Component({
   selector: 'page-page-account',
@@ -25,6 +26,8 @@ export class AccountPage {
   AccountFractalLevel : any;
   AccountWvWRank : any;
 
+  characters: Array<{nom: string}> = [];
+
   constructor(public navCtrl: NavController , public serv: GW2APIProvider) {
 
     this.getAccount();
@@ -46,10 +49,13 @@ export class AccountPage {
         }
 
         this.AccountCreation = data.created;
+        this.AccountCreation = this.convertDate(this.AccountCreation);
         this.AccountExtension = data.access;
         this.AccountCommander = data.commander;
         this.AccountFractalLevel = data.fractal_level;
         this.AccountWvWRank = data.wvw_rank;
+
+        this.getCharacters();
 
       },
 
@@ -91,6 +97,12 @@ export class AccountPage {
 
   }
 
+
+  getGuild(guild)
+  {
+    this.navCtrl.push(GuildPage , {idGuild : guild});
+  }
+
   getGuildName(idGuild)
   {
     this.serv.getGuildInformations(idGuild).subscribe(
@@ -109,9 +121,34 @@ export class AccountPage {
     );
   }
 
-  getGuild(guild)
+  getCharacters()
   {
-    this.navCtrl.push(GuildPage , {idGuild : guild});
+    this.serv.getCharacters().subscribe(
+
+      data => {
+
+        this.characters = data;
+
+      },
+
+      err => {
+
+        alert(err);
+
+      },
+    );
+  }
+
+  convertDate(date)
+  {
+    let TDateSplit = date.split("T");
+    let ZDateSplit = TDateSplit[1].split("Z");
+    return TDateSplit[0]+" "+ZDateSplit[0];
+  }
+
+  goToCharacter(character)
+  {
+    this.navCtrl.push(PagePersonnagePage , {character : character});
   }
 
 }

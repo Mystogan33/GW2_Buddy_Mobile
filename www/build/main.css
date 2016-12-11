@@ -19644,7 +19644,7 @@ sub {
   }
 }
 
-page-guild-page ion-navbar {
+page-guild-page ion-navbar ion-title {
   text-align: center;
 }
 
@@ -19658,12 +19658,32 @@ page-guild-page .custom-class-divider {
 }
 
 page-guild-page ion-content {
-  background: url("../assets/img/background.jpg") no-repeat center center fixed;
+  background: url("../assets/img/background.png") no-repeat center center fixed;
   -ms-background-size: cover;
   background-size: cover;
 }
 
-page-page-account ion-navbar {
+page-mes-guildes ion-navbar ion-title {
+  text-align: center;
+}
+
+page-mes-guildes ion-content {
+  background: url("../assets/img/background.png") no-repeat center center fixed;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+page-mes-personnages ion-navbar ion-title {
+  text-align: center;
+}
+
+page-mes-personnages ion-content {
+  background: url("../assets/img/background.png") no-repeat center center fixed;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+page-page-account ion-navbar ion-title {
   text-align: center;
 }
 
@@ -19677,27 +19697,32 @@ page-page-account .custom-class-divider {
 }
 
 page-page-account ion-content {
-  background: url("../assets/img/background.jpg") no-repeat center center fixed;
+  background: url("../assets/img/background.png") no-repeat center center fixed;
   -ms-background-size: cover;
   background-size: cover;
 }
 
-page-pageAccueil ion-navbar {
+page-pageAccueil ion-navbar ion-title {
   text-align: center;
 }
 
 page-pageAccueil ion-content {
-  background: url("../assets/img/background.jpg") no-repeat center center fixed;
+  background: url("../assets/img/background.png") no-repeat center center fixed;
   -ms-background-size: cover;
   background-size: cover;
 }
 
-page-pageListePersonnages ion-navbar {
+page-pagePersonnage ion-navbar ion-title {
   text-align: center;
 }
 
-page-pageListePersonnages ion-content {
-  background: url("../assets/img/Shatterer.jpg") no-repeat center center fixed;
+page-pagePersonnage .custom-class-divider {
+  color: #222;
+  background-color: #f53d3d;
+}
+
+page-pagePersonnage ion-content {
+  background: url("../assets/img/GW2.png") no-repeat center center fixed;
   -ms-background-size: cover;
   background-size: cover;
 }

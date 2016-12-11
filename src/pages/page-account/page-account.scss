@@ -1,7 +1,11 @@
 page-page-account {
 
   ion-navbar {
-    text-align: center;
+
+    ion-title{
+      text-align: center;
+    }
+
   }
 
   .title {
@@ -14,7 +18,7 @@ page-page-account {
   }
 
   ion-content {
-    background: url('../assets/img/background.jpg') no-repeat center center fixed;
+    background: url('../assets/img/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;

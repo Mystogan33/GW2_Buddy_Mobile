@@ -3,8 +3,9 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { pageAccueil } from '../pages/page-accueil/pageAccueil';
-import { pageListePersonnages } from '../pages/page-liste-personnages/pageListePersonnages';
 import { AccountPage } from '../pages/page-account/page-account';
+import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
+import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
 
 @Component({
   templateUrl: 'app.html'
@@ -23,7 +24,8 @@ export class MyApp {
     this.pages = [
       { title: 'Accueil', component: pageAccueil },
       { title: 'Mon compte', component: AccountPage },
-      { title: 'Liste des personnages', component: pageListePersonnages },
+      { title: 'Mes Personnages', component: MesPersonnagesPage},
+      { title: 'Mes guildes' , component: MesGuildesPage}
     ];
 
   }

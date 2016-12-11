@@ -1,7 +1,25 @@
 page-pagePersonnage {
 
   ion-navbar {
-    text-align: center;
+
+    ion-title{
+      text-align: center;
+    }
+
+  }
+
+  .custom-class-divider {
+    color: color($colors,dark);
+    background-color: color($colors,danger);
+  }
+
+  ion-content {
+    background: url('../assets/img/GW2.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
   }
 
 }

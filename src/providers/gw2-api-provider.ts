@@ -35,4 +35,11 @@ export class GW2APIProvider {
 
   }
 
+  getCharacterInformations(idCharacter): Observable<any> {
+
+    return this.http.get('https://api.guildwars2.com/v2/characters/'+idCharacter+'?access_token='+this.appKey)
+    .map(res => res.json());
+
+  }
+
 }
