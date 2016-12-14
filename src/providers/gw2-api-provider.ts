@@ -42,4 +42,16 @@ export class GW2APIProvider {
 
   }
 
+  getMyWallet()
+  {
+    return this.http.get('https://api.guildwars2.com/v2/account/wallet?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
+  getCurrency(currency)
+  {
+    return this.http.get('https://api.guildwars2.com/v2/currencies/'+currency+'?access_token='+this.appKey+'&lang=en')
+    .map(res => res.json());
+  }
+
 }

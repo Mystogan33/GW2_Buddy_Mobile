@@ -7,6 +7,7 @@ import { GuildPage } from '../pages/guild-page/guild-page';
 import {PagePersonnagePage} from '../pages/page-personnage/pagePersonnage';
 import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
 import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
+import {MyWalletPage} from '../pages/my-wallet/my-wallet';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
     GuildPage,
     PagePersonnagePage,
     MesPersonnagesPage,
-    MesGuildesPage
+    MesGuildesPage,
+    MyWalletPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +31,8 @@ import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
     GuildPage,
     PagePersonnagePage,
     MesPersonnagesPage,
-    MesGuildesPage
+    MesGuildesPage,
+    MyWalletPage
   ],
   providers: []
 })

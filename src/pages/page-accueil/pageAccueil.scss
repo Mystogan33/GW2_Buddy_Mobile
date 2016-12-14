@@ -8,6 +8,29 @@ page-pageAccueil {
 
   }
 
+  .myBg {
+     background-color: color($colors,blizzard);
+   }
+
+   .custom-class-divider {
+
+     h2 {
+       color: color($colors,secondary);
+     }
+
+     div
+     {
+       color : color($colors,secondary);
+       display: inline;
+     }
+
+     p {
+       color: color($colors,secondary);
+     }
+
+     background-color: color($colors,blizzard);
+   }
+
   ion-content {
     background: url('../assets/img/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -16,5 +39,7 @@ page-pageAccueil {
     background-size: cover;
 
   }
+
+
 
 }

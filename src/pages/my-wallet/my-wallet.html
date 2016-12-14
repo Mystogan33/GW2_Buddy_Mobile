@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="secondary">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Mon portefeuille</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-item *ngFor="let currency of Currencies" class="custom-class-divider">
+    <div style="display:inline-block ; float: left"item-left><h2><b>{{currency.name}}</b></h2></div>
+    <div style="display:inline ; float : right" item-right><h2><b>{{currency.amount}}</b></h2></div>
+    <div style="display:inline-block ; float:right" item-right><img [src]="currency.img"></div>
+  </ion-item>
+
+</ion-content>

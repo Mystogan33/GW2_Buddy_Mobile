@@ -6,6 +6,7 @@ import { pageAccueil } from '../pages/page-accueil/pageAccueil';
 import { AccountPage } from '../pages/page-account/page-account';
 import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
 import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
+import {MyWalletPage} from '../pages/my-wallet/my-wallet';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,8 @@ export class MyApp {
       { title: 'Accueil', component: pageAccueil },
       { title: 'Mon compte', component: AccountPage },
       { title: 'Mes Personnages', component: MesPersonnagesPage},
-      { title: 'Mes guildes' , component: MesGuildesPage}
+      { title: 'Mes guildes' , component: MesGuildesPage},
+      { title: 'Mon portefeuille' , component : MyWalletPage}
     ];
 
   }
