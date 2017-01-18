@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Platform, ActionSheetController } from 'ionic-angular';
+import {GW2APIProvider} from '../../providers/gw2-api-provider';
 
 
 @Component({
@@ -9,20 +10,45 @@ import { Platform, ActionSheetController } from 'ionic-angular';
 })
 export class FinishersPage {
 
+  idFinish : any;
+  permanent : any;
+
+
   constructor(public navCtrl: NavController,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController
-  ) {}
+    public actionsheetCtrl: ActionSheetController,
+    public serv: GW2APIProvider
+  ) {
+
+      this.getFinishersInformation();
+  }
 
 
   ionViewDidLoad() {
     console.log('Hello FinishersPage Page');
   }
+
+
+getFinishersInformation(){
+  this.serv.getFinishersInformation(idFinishers.id).subscribe(
+    data => {
+    this.idFinish = data.id;
+    this.permanent = data.permanant;                                                           //this.emblem = data. de coté celui la;
+    },
+    err => {
+      alert(err);
+    },
+  );
+}
+
  //spartaaaaaaaaaaaaaaaa
 
    openMenu() {
+
+
+
      let actionSheet = this.actionsheetCtrl.create({
-       title: 'Albums',
+       title: this.idFinish,
        cssClass: 'action-sheets-basic-page',
        buttons: [
          {
@@ -67,6 +93,20 @@ export class FinishersPage {
      actionSheet.present();
    }
  // plouf
+/*
+ getFinishersInformation()
+ {
 
+   this.serv.getFinishersInformation(this.).subscribe(
+     data => {
+     this.idFinish = data.id;
+     this.permanent = data.permanant;                                                           //this.emblem = data. de coté celui la;
+     },
+     err => {
+       alert(err);
+     },
+   );
+ }
+*/
 
 }

@@ -42,9 +42,11 @@ export class GW2APIProvider {
 
   }
 
+//prend la liste
   getFinishersInformation(idFinishers): Observable<any> {
     return this.http.get('h/ttps://api.guildwars2.com/v2/account/finishers/'+idFinishers+'?access_token='+this.appKey)
     .map(res => res.json());
   }
+  // en selectionne un a faire
 
 }
