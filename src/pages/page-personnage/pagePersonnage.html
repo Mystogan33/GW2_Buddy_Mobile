@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="secondary">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -17,74 +17,72 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="myBg">
 
-  <ion-card>
+  <ion-card class="custom-class-divider">
 
     <ion-item-divider class="custom-class-divider"><b>informations générales : </b></ion-item-divider>
-        <ion-item>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Race : </b>{{CharacterRace}}</h2>
-        </ion-item>
 
-        <ion-item>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Genre : </b>{{CharacterGenre}}</h2>
-        </ion-item>
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Race : </b>{{CharacterRace}}</h2>
+    </ion-item>
 
-        <ion-item>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Profession : </b>{{CharacterProfession}}</h2>
-        </ion-item>
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Genre : </b>{{CharacterGenre}}</h2>
+    </ion-item>
 
-        <ion-item>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
-        </ion-item>
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Profession : </b>{{CharacterProfession}}</h2>
+    </ion-item>
 
-        <button ion-item *ngFor="let guild of CharacterGuild"(click)="goToGuild(guild)" text-wrap>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
-        </button>
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
+    </ion-item>
 
-        <ion-item>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Age : </b>{{CharacterAge}} jours</h2>
-        </ion-item>
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Titre : </b>{{CharacterTitle}}</h2>
+    </ion-item>
 
-        <ion-item text-wrap>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Date de création : </b>{{CharacterCreation}}</h2>
-        </ion-item>
+    <button class="custom-class-divider" ion-item *ngFor="let guild of CharacterGuild"(click)="goToGuild(guild)" text-wrap>
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
+    </button>
 
-        <ion-item>
-          <ion-icon name="game-controller-b" item-left large></ion-icon>
-          <h2><b>Nombre de morts : </b>{{CharacterDeaths}}</h2>
-        </ion-item>
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Age : </b>{{CharacterAge}} jours</h2>
+    </ion-item>
 
-        <ion-item-divider class="custom-class-divider"><b>Métiers : </b></ion-item-divider>
+    <ion-item class="custom-class-divider" text-wrap>
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Date de création : </b>{{CharacterCreation}}</h2>
+    </ion-item>
 
-        <ion-list *ngFor="let job of CharacterCrafting">
+    <ion-item class="custom-class-divider">
+      <ion-icon name="game-controller-b" item-left large></ion-icon>
+      <h2><b>Nombre de morts : </b>{{CharacterDeaths}}</h2>
+    </ion-item>
 
-          <ion-item>
-            <ion-icon name = "game-controller-b" item-left large></ion-icon>
-            <h2><b>{{job.discipline}}</b></h2>
-          </ion-item>
-          <ion-item>
-            <ion-icon name = "game-controller-b" item-left large></ion-icon>
-            <h2><b>Niveau : </b>{{job.rating}}</h2>
-          </ion-item>
-          <ion-item>
-            <ion-icon name = "game-controller-b" item-left large></ion-icon>
-            <h2><b>Actif : </b>{{isActive(job.active)}}</h2>
-          </ion-item>
+    <ion-item-divider class="custom-class-divider"><b>Métiers : </b></ion-item-divider>
 
-      </ion-list>
+    <ion-list *ngFor="let job of CharacterCrafting">
 
-      <ion-item>
-        <ion-icon name="game-controller-b" item-left large></ion-icon>
-        <h2><b>Titre : </b>{{CharacterTitle}}</h2>
+      <ion-item-divider class="custom-class-divider" no-lines><b>{{job.discipline}}</b></ion-item-divider>
+      <ion-item class="custom-class-divider">
+        <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <h2><b>Niveau : </b>{{job.rating}}</h2>
       </ion-item>
+      <ion-item class="custom-class-divider" no-lines>
+        <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <h2><b>Actif : </b>{{isActive(job.active)}}</h2>
+      </ion-item>
+
+    </ion-list>
 
   </ion-card>
 

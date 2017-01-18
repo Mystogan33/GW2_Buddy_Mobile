@@ -8,6 +8,8 @@ import {PagePersonnagePage} from '../pages/page-personnage/pagePersonnage';
 import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
 import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
 import {FinishersPage} from '../pages/finishers/finishers';
+import {MyWalletPage} from '../pages/my-wallet/my-wallet';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {FinishersPage} from '../pages/finishers/finishers';
     PagePersonnagePage,
     MesPersonnagesPage,
     MesGuildesPage,
-    FinishersPage
+    FinishersPage,
+    MyWalletPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,7 +35,8 @@ import {FinishersPage} from '../pages/finishers/finishers';
     PagePersonnagePage,
     MesPersonnagesPage,
     MesGuildesPage,
-    FinishersPage
+    FinishersPage,
+    MyWalletPage
   ],
   providers: []
 })

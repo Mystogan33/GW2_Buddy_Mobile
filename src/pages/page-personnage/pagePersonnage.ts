@@ -21,6 +21,7 @@ export class PagePersonnagePage {
   CharacterAge : any;
   CharacterCreation : any;
   CharacterDeaths : any;
+  CharacterTitle : any;
 
   CharacterCrafting : Array<{discipline : string , rating : string , active : string}> = [];
 
@@ -50,6 +51,7 @@ export class PagePersonnagePage {
         this.CharacterDeaths = data.deaths;
         this.CharacterCrafting = data.crafting;
 
+        this.CharacterTitle = data.title;
       },
 
       err => {

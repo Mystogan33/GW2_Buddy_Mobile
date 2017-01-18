@@ -8,9 +8,27 @@ page-pagePersonnage {
 
   }
 
+  .myBg {
+     background-color: color($colors,blizzard);
+   }
+
   .custom-class-divider {
-    color: color($colors,dark);
-    background-color: color($colors,danger);
+
+    h2 {
+      color: color($colors,secondary);
+    }
+
+    div
+    {
+      color : color($colors,secondary);
+      display: inline;
+    }
+
+    p {
+      color: color($colors,secondary);
+    }
+
+    background-color: color($colors,blizzard);
   }
 
   ion-content {

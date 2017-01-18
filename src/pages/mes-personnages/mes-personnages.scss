@@ -8,6 +8,33 @@ page-mes-personnages {
 
   }
 
+  .myBg {
+     background-color: color($colors,blizzard);
+   }
+
+  .custom-class-divider {
+
+    h2 {
+      color: color($colors,secondary);
+    }
+
+    div
+    {
+      color : color($colors,secondary);
+    }
+
+    p {
+      color: color($colors,secondary);
+    }
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+
+    background-color: color($colors,blizzard);
+  }
+
   ion-content {
     background: url('../assets/img/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;

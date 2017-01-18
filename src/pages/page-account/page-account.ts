@@ -23,6 +23,7 @@ export class AccountPage {
   AccountCreation : any;
   AccountExtension : any;
   AccountCommander : any;
+  AccountDailyAP : any;
   AccountFractalLevel : any;
   AccountWvWRank : any;
 
@@ -52,6 +53,7 @@ export class AccountPage {
         this.AccountCreation = this.convertDate(this.AccountCreation);
         this.AccountExtension = data.access;
         this.AccountCommander = data.commander;
+        this.AccountDailyAP = data.daily_ap;
         this.AccountFractalLevel = data.fractal_level;
         this.AccountWvWRank = data.wvw_rank;
 
@@ -64,6 +66,7 @@ export class AccountPage {
         alert(err);
 
       },
+
     );
   }
 

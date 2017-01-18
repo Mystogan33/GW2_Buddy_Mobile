@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="secondary">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -16,48 +16,47 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="myBg">
 
-  <ion-card>
-    <ion-item color="danger">
+  <ion-item class="custom-class-divider">
+    <ion-item color="secondary" class="custom-class-divider" no-lines>
       <ion-avatar item-left>
-        <img src="assets/img/ListePersonnages.jpg">
+        <img src="assets/img/icon.png">
       </ion-avatar>
       <h2 class="title"><b>{{AccountName}}</b></h2>
     </ion-item>
 
-    <div style="position: relative">
-      <img src="assets/img/ListePersonnages.jpg">
-    </div>
-
       <ion-item-group>
-        <ion-item-divider class="custom-class-divider"><b>Mes informations générales</b></ion-item-divider>
-
-        <ion-item>
-          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <ion-item class="custom-class-divider">
+          <ion-icon name = "" item-left large></ion-icon>
           <h2> <b> Créé le :</b> {{AccountCreation}} </h2>
         </ion-item>
 
-        <ion-item>
-          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <ion-item class="custom-class-divider">
+          <ion-icon name = "" item-left large></ion-icon>
           <h2> <b> Accès à : </b> {{hasExtension()}} </h2>
         </ion-item>
 
-        <ion-item>
-          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <ion-item class="custom-class-divider">
+          <ion-icon name = "" item-left large></ion-icon>
           <h2> <b> Commandant :</b> {{isCommander()}} </h2>
         </ion-item>
 
-        <ion-item>
-          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <ion-item class="custom-class-divider">
+          <ion-icon name = "" item-left large></ion-icon>
+          <h2> <b> Daily AP :</b> {{AccountDailyAP}} </h2>
+        </ion-item>
+
+        <ion-item class="custom-class-divider">
+          <ion-icon name = "" item-left large></ion-icon>
           <h2> <b> Niveau de fractale :</b> {{AccountFractalLevel}} </h2>
         </ion-item>
 
-        <ion-item>
-          <ion-icon name = "game-controller-b" item-left large></ion-icon>
+        <ion-item class="custom-class-divider">
+          <ion-icon name = "" item-left large></ion-icon>
           <h2> <b> Rang McM :</b> {{AccountWvWRank}} </h2>
         </ion-item>
       </ion-item-group>
 
-  </ion-card>
+  </ion-item>
 </ion-content>
