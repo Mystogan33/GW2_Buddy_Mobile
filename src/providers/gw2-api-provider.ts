@@ -62,5 +62,11 @@ export class GW2APIProvider {
     .map(res => res.json());
   }
 
+  getMyFinishers()
+  {
+    return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
 
 }
