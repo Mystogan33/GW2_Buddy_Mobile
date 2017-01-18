@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GW2APIProvider } from '../../providers/gw2-api-provider'
 import { NavController , AlertController } from 'ionic-angular';
+import { Vibration } from 'ionic-native';
 
 @Component({
   selector: 'page-pageAccueil',
@@ -17,7 +18,7 @@ export class pageAccueil {
   }
 
   isConnected() {
-    
+
     if(localStorage.getItem('appKey')== null)
     {
       this.enterKey();

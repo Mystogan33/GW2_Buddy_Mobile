@@ -8,13 +8,40 @@ page-guild-page {
 
   }
 
+  .myBg {
+     background-color: color($colors,blizzard);
+   }
+
   .title {
-    color : color($colors,dark);
+    color : color($colors,secondary);
   }
 
   .custom-class-divider {
-    color: color($colors,dark);
-    background-color: color($colors,danger);
+
+    h1 {
+        color: color($colors,secondary);
+    }
+
+    h2 {
+        color: color($colors,secondary);
+    }
+
+    ion-icon
+    {
+      color: color($colors,secondary);
+    }
+
+    div
+    {
+      color : color($colors,secondary);
+      display: inline;
+    }
+
+    p {
+      color: color($colors,secondary);
+    }
+
+    background-color: color($colors,blizzard);
   }
 
   ion-content {
