@@ -7,7 +7,9 @@ import { GuildPage } from '../pages/guild-page/guild-page';
 import {PagePersonnagePage} from '../pages/page-personnage/pagePersonnage';
 import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
 import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
+import {FinishersPage} from '../pages/finishers/finishers';
 import {MyWalletPage} from '../pages/my-wallet/my-wallet';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import {MyWalletPage} from '../pages/my-wallet/my-wallet';
     PagePersonnagePage,
     MesPersonnagesPage,
     MesGuildesPage,
+    FinishersPage,
     MyWalletPage
   ],
   imports: [
@@ -32,6 +35,7 @@ import {MyWalletPage} from '../pages/my-wallet/my-wallet';
     PagePersonnagePage,
     MesPersonnagesPage,
     MesGuildesPage,
+    FinishersPage,
     MyWalletPage
   ],
   providers: []

@@ -42,6 +42,14 @@ export class GW2APIProvider {
 
   }
 
+
+//prend la liste
+  getFinishersInformation(idFinishers): Observable<any> {
+    return this.http.get('h/ttps://api.guildwars2.com/v2/account/finishers/'+idFinishers+'?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+  // en selectionne un a faire
+
   getMyWallet()
   {
     return this.http.get('https://api.guildwars2.com/v2/account/wallet?access_token='+this.appKey)
@@ -53,5 +61,12 @@ export class GW2APIProvider {
     return this.http.get('https://api.guildwars2.com/v2/currencies/'+currency+'?access_token='+this.appKey+'&lang=en')
     .map(res => res.json());
   }
+
+  getMyFinishers()
+  {
+    return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
 
 }
