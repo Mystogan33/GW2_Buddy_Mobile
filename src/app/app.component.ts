@@ -7,6 +7,7 @@ import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
 import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
 import {FinishersPage} from '../pages/finishers/finishers';
 import {MyWalletPage} from '../pages/my-wallet/my-wallet';
+import{MinisPage} from '../pages/minis/minis';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +29,8 @@ export class MyApp {
       { title: 'Mes Personnages', component: MesPersonnagesPage},
       { title: 'Mes guildes' , component: MesGuildesPage},
       { title: 'Mes finishers' , component: FinishersPage},
-      { title: 'Mon portefeuille' , component : MyWalletPage}
+      { title: 'Mon portefeuille' , component : MyWalletPage},
+      { title: 'Mini-Pets' , component : MinisPage}
     ];
 
   }
