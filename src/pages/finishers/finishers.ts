@@ -17,7 +17,8 @@ export class FinishersPage {
   permanent : any;
   quantity : any;
   finisherTab : Array<any>;
-  grid : Array<Array<any>>;
+  infoFinishTab : Array <{ icon : string , name : string , unlock_details : string}> = [];
+
 
 
   constructor(public navCtrl: NavController,
@@ -38,18 +39,16 @@ export class FinishersPage {
   }
 
 
-/*getFinishersInformation(){
-//  this.serv.getGuildInformations(this.guildName.id).subscribe(
-  this.serv.getFinishersInformation(this.idFinishers).subscribe(
+getFinishersInformation(idFinishers){
+  this.serv.getFinishersInformation(idFinishers).subscribe(
     data => {
-    this.idFinish = data.id;
-    this.permanent = data.permanant;                                                           //this.emblem = data. de coté celui la;
+    this.infoFinishTab.push({icon:data.icon,name:data.name,unlock_details:data.unlock_details});                                                        //this.emblem = data. de coté celui la;
     },
     err => {
       alert(err);
     },
   );
-}*/
+}
 
 getFinishers(){
 
@@ -59,8 +58,8 @@ getFinishers(){
       this.finisherTab = data;
      for(var i = 0; i < this.finisherTab.length; i++)
       {
-
-      }
+        this.getFinishersInformation(this.finisherTab[i].id);
+        }
 
     },
     err => {
@@ -69,39 +68,17 @@ getFinishers(){
   );
 }
 
-   openMenu() {
+   openMenu(finisherDesc) {
 
 
 
      let actionSheet = this.actionsheetCtrl.create({
-       title: this.idFinish,
+       title: finisherDesc.name,
        cssClass: 'action-sheets-basic-page',
        buttons: [
          {
-           text: 'Delete',
-           role: 'destructive',
-           icon: !this.platform.is('ios') ? 'trash' : null,
-           handler: () => {
-             console.log('Delete clicked');
-           }
-         },
-         {
-           text: 'Share',
-           icon: !this.platform.is('ios') ? 'share' : null,
-           handler: () => {
-             console.log('Share clicked');
-           }
-         },
-         {
-           text: 'Play',
-           icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
-           handler: () => {
-             console.log('Play clicked');
-           }
-         },
-         {
-           text: 'Favorite',
-           icon: !this.platform.is('ios') ? 'heart-outline' : null,
+           text:  finisherDesc.unlock_details ,
+
            handler: () => {
              console.log('Favorite clicked');
            }
