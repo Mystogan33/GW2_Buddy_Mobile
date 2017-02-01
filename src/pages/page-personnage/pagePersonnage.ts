@@ -21,7 +21,7 @@ export class PagePersonnagePage {
   CharacterAge : any;
   CharacterCreation : any;
   CharacterDeaths : any;
-  CharacterTitle : any;
+  CharacterTitle : Array<{name : string , achievement : string}> = [];
 
   CharacterCrafting : Array<{discipline : string , rating : string , active : string}> = [];
 
@@ -45,13 +45,12 @@ export class PagePersonnagePage {
         this.CharacterLevel = data.level;
 
         this.getGuildName(data.guild);
+        this.getTitleInformations(data.title);
 
         this.CharacterAge = data.age;
         this.CharacterCreation = this.convertDate(data.created);
         this.CharacterDeaths = data.deaths;
         this.CharacterCrafting = data.crafting;
-
-        this.CharacterTitle = data.title;
 
       },
 
@@ -95,6 +94,24 @@ export class PagePersonnagePage {
         data => {
 
           this.CharacterGuild.push({name : data.name , tag: data.tag , id : data.id});
+
+        },
+
+        err => {
+
+          alert(err);
+
+        },
+      );
+    }
+
+    getTitleInformations(title)
+    {
+      this.serv.getTitleInformations(title).subscribe(
+
+        data => {
+
+          this.CharacterTitle.push({name : data.name , achievement : data.achievement});
 
         },
 

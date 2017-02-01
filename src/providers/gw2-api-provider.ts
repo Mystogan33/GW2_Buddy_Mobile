@@ -45,27 +45,32 @@ export class GW2APIProvider {
 
 //prend la liste
   getFinishersInformation(idFinishers): Observable<any> {
-    return this.http.get('h/ttps://api.guildwars2.com/v2/account/finishers/'+idFinishers+'?access_token='+this.appKey)
+    return this.http.get('h/ttps://api.guildwars2.com/v2/finishers/'+idFinishers+'?access_token='+this.appKey)
     .map(res => res.json());
   }
   // en selectionne un a faire
 
-  getMyWallet()
+  getMyWallet(): Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/account/wallet?access_token='+this.appKey)
     .map(res => res.json());
   }
 
-  getCurrency(currency)
+  getCurrency(currency): Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/currencies/'+currency+'?access_token='+this.appKey+'&lang=en')
     .map(res => res.json());
   }
 
-  getMyFinishers()
+  getMyFinishers(): Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
     .map(res => res.json());
+  }
+
+  getTitleInformations(title): Observable<any>
+  {
+    return this.http.get('https://api.guildwars2.com/v2/titles/'+title+'?access_token='+this.appKey);
   }
 
 
