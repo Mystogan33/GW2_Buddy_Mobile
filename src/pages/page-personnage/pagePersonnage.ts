@@ -52,6 +52,7 @@ export class PagePersonnagePage {
         this.CharacterCrafting = data.crafting;
 
         this.CharacterTitle = data.title;
+
       },
 
       err => {
@@ -60,6 +61,12 @@ export class PagePersonnagePage {
 
       },
     );
+  }
+
+  logOut(){
+
+    localStorage.removeItem('appKey');
+
   }
 
   isActive(value)

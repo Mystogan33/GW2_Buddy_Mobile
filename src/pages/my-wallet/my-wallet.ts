@@ -18,6 +18,12 @@ export class MyWalletPage {
 
   }
 
+  logOut(){
+
+    localStorage.removeItem('appKey');
+
+  }
+
   getWallet()
   {
     this.serv.getMyWallet().subscribe(
