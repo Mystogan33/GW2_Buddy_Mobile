@@ -50,16 +50,17 @@ export class FinishersPage {
     },
   );
 }*/
+
 getFinishers(){
 
   this.serv.getMyFinishers().subscribe(
     data => {
 
       this.finisherTab = data;
-    /*  for(var i = 0; i < this.finisherTab.length; i++)
+     for(var i = 0; i < this.finisherTab.length; i++)
       {
 
-      }*/
+      }
 
     },
     err => {
@@ -67,28 +68,6 @@ getFinishers(){
     },
   );
 }
-//spartaaaaaaaaaaaaaaaa
-/*creatRow(){
-  let rowNum = 0; //counter to iterate over the rows in the grid
-
-  for (let i = 0; i < this.finisherTab.length ; i+=3) { //iterate images
-
-    this.grid[rowNum] = Array(3); //declare two elements per row
-
-    if (this.finisherTab[i]) { //check file URI exists
-      this.grid[rowNum][0] = this.finisherTab[i] //insert image
-    }
-
-    if (this.finisherTab[i+1]) { //repeat for the second
-      this.grid[rowNum][1] = this.finisherTab[i+1]
-    }
-    if (this.finisherTab[i+1]) { //repeat for the third
-      this.grid[rowNum][2] = this.finisherTab[i+2]
-    }
-
-    rowNum++; //go on to the next row
-  }
-}*/
 
    openMenu() {
 
@@ -139,21 +118,6 @@ getFinishers(){
      });
      actionSheet.present();
    }
- // plouf
-/*
- getFinishersInformation()
- {
 
-   this.serv.getFinishersInformation(this.).subscribe(
-     data => {
-     this.idFinish = data.id;
-     this.permanent = data.permanant;                                                           //this.emblem = data. de coté celui la;
-     },
-     err => {
-       alert(err);
-     },
-   );
- }
-*/
 
 }
