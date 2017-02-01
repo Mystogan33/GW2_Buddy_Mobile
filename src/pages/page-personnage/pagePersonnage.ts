@@ -45,7 +45,7 @@ export class PagePersonnagePage {
         this.CharacterLevel = data.level;
 
         this.getGuildName(data.guild);
-        this.CharacterTitle = data.title;
+        this.getTitleInformations(data.title);
 
         this.CharacterAge = data.age;
         this.CharacterCreation = this.convertDate(data.created);
@@ -65,6 +65,22 @@ export class PagePersonnagePage {
   logOut(){
 
     localStorage.removeItem('appKey');
+
+  }
+
+  getTitleInformations(title)
+  {
+
+      this.serv.getTitleInformations(title).subscribe(
+
+        data => {
+          this.CharacterTitle = data.name;
+
+        },
+        err => {
+          alert(err);
+        },
+      );
 
   }
 
@@ -94,24 +110,6 @@ export class PagePersonnagePage {
         data => {
 
           this.CharacterGuild.push({name : data.name , tag: data.tag , id : data.id});
-
-        },
-
-        err => {
-
-          alert(err);
-
-        },
-      );
-    }
-
-    getTitleInformations(title)
-    {
-      this.serv.getTitleInformations(title).subscribe(
-
-        data => {
-
-          this.CharacterTitle.push({id : data.id , name : data.name , achievement : data.achievement});
 
         },
 

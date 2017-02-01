@@ -46,9 +46,9 @@
       <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
     </ion-item>
 
-    <ion-item class="custom-class-divider" ion-item *ngFor="let obj of CharacterTitle" text-wrap>
+    <ion-item class="custom-class-divider" text-wrap>
       <ion-icon name="" large item-left></ion-icon>
-      <h2><b>Titre : </b>{{obj.id}}</h2>
+      <div *ngIf="CharacterTitle"><h2><b>Titre : </b>{{CharacterTitle}}</h2></div>
     </ion-item>
 
     <button class="custom-class-divider" ion-item *ngFor="let guild of CharacterGuild" (click)="goToGuild(guild)" text-wrap>

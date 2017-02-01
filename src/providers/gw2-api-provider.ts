@@ -35,6 +35,12 @@ export class GW2APIProvider {
 
   }
 
+  getTitleInformations(title): Observable<any>
+  {
+    return this.http.get('https://api.guildwars2.com/v2/titles/'+title+'?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
   getCharacterInformations(idCharacter): Observable<any> {
 
     return this.http.get('https://api.guildwars2.com/v2/characters/'+idCharacter+'?access_token='+this.appKey)
@@ -42,13 +48,18 @@ export class GW2APIProvider {
 
   }
 
-
-//prend la liste
-  getFinishersInformation(idFinishers): Observable<any> {
-    return this.http.get('h/ttps://api.guildwars2.com/v2/finishers/'+idFinishers+'?access_token='+this.appKey)
+  getMyFinishers() : Observable<any>
+  {
+    return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
     .map(res => res.json());
   }
-  // en selectionne un a faire
+
+  getFinishersInformation(idFinishers): Observable<any> {
+
+    return this.http.get('https://api.guildwars2.com/v2/finishers/'+idFinishers+'?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
 
   getMyWallet(): Observable<any>
   {
@@ -62,16 +73,16 @@ export class GW2APIProvider {
     .map(res => res.json());
   }
 
-  getMyFinishers(): Observable<any>
+
+  getMyMinis() : Observable<any>
   {
-    return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
+    return this.http.get('https://api.guildwars2.com/v2/account/minis?access_token='+this.appKey)
     .map(res => res.json());
   }
 
-  getTitleInformations(title): Observable<any>
-  {
-    return this.http.get('https://api.guildwars2.com/v2/titles/'+title+'?access_token='+this.appKey);
+  getMinisInformation(idMinis): Observable<any> {
+    return this.http.get('https://api.guildwars2.com/v2/minis/'+idMinis+'?access_token='+this.appKey)
+    .map(res => res.json());
   }
-
 
 }
