@@ -17,7 +17,8 @@ export class FinishersPage {
   permanent : any;
   quantity : any;
   finisherTab : Array<any>;
-  grid : Array<Array<any>>;
+  infoFinishTab : Array <{ icon : string , name : string , unlock_details : string}> = [];
+
 
 
   constructor(public navCtrl: NavController,
@@ -38,28 +39,27 @@ export class FinishersPage {
   }
 
 
-/*getFinishersInformation(){
-//  this.serv.getGuildInformations(this.guildName.id).subscribe(
-  this.serv.getFinishersInformation(this.idFinishers).subscribe(
+getFinishersInformation(idFinishers){
+  this.serv.getFinishersInformation(idFinishers).subscribe(
     data => {
-    this.idFinish = data.id;
-    this.permanent = data.permanant;                                                           //this.emblem = data. de coté celui la;
+    this.infoFinishTab.push({icon:data.icon,name:data.name,unlock_details:data.unlock_details});                                                        //this.emblem = data. de coté celui la;
     },
     err => {
       alert(err);
     },
   );
-}*/
+}
+
 getFinishers(){
 
   this.serv.getMyFinishers().subscribe(
     data => {
 
       this.finisherTab = data;
-    /*  for(var i = 0; i < this.finisherTab.length; i++)
+     for(var i = 0; i < this.finisherTab.length; i++)
       {
-
-      }*/
+        this.getFinishersInformation(this.finisherTab[i].id);
+        }
 
     },
     err => {
@@ -67,62 +67,18 @@ getFinishers(){
     },
   );
 }
-//spartaaaaaaaaaaaaaaaa
-/*creatRow(){
-  let rowNum = 0; //counter to iterate over the rows in the grid
 
-  for (let i = 0; i < this.finisherTab.length ; i+=3) { //iterate images
-
-    this.grid[rowNum] = Array(3); //declare two elements per row
-
-    if (this.finisherTab[i]) { //check file URI exists
-      this.grid[rowNum][0] = this.finisherTab[i] //insert image
-    }
-
-    if (this.finisherTab[i+1]) { //repeat for the second
-      this.grid[rowNum][1] = this.finisherTab[i+1]
-    }
-    if (this.finisherTab[i+1]) { //repeat for the third
-      this.grid[rowNum][2] = this.finisherTab[i+2]
-    }
-
-    rowNum++; //go on to the next row
-  }
-}*/
-
-   openMenu() {
+   openMenu(finisherDesc) {
 
 
 
      let actionSheet = this.actionsheetCtrl.create({
-       title: this.idFinish,
+       title: finisherDesc.name,
        cssClass: 'action-sheets-basic-page',
        buttons: [
          {
-           text: 'Delete',
-           role: 'destructive',
-           icon: !this.platform.is('ios') ? 'trash' : null,
-           handler: () => {
-             console.log('Delete clicked');
-           }
-         },
-         {
-           text: 'Share',
-           icon: !this.platform.is('ios') ? 'share' : null,
-           handler: () => {
-             console.log('Share clicked');
-           }
-         },
-         {
-           text: 'Play',
-           icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
-           handler: () => {
-             console.log('Play clicked');
-           }
-         },
-         {
-           text: 'Favorite',
-           icon: !this.platform.is('ios') ? 'heart-outline' : null,
+           text:  finisherDesc.unlock_details ,
+
            handler: () => {
              console.log('Favorite clicked');
            }
@@ -139,21 +95,6 @@ getFinishers(){
      });
      actionSheet.present();
    }
- // plouf
-/*
- getFinishersInformation()
- {
 
-   this.serv.getFinishersInformation(this.).subscribe(
-     data => {
-     this.idFinish = data.id;
-     this.permanent = data.permanant;                                                           //this.emblem = data. de coté celui la;
-     },
-     err => {
-       alert(err);
-     },
-   );
- }
-*/
 
 }
