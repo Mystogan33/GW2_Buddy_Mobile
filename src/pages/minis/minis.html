@@ -9,19 +9,55 @@
 
 
   <ion-navbar color="secondary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-        <ion-title>Mini-Pets</ion-title>
+
+      <!--  <ion-title>Mini-Pets   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        </ion-title> -->
+
+        <ion-buttons left>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+    </ion-buttons>
+
+    <ion-title>
+      <b>Mini-Pets</b>
+
+
+    <ion-buttons right>
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-buttons>
+  </ion-title>
+
   </ion-navbar>
 
 
 </ion-header>
 
 <ion-content padding class="page-minis">
+<!-- searchbar
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let item of items">
+    {{ item }}
+  </ion-item>
+</ion-list>
+-->
 
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-grid>
+<ion-list>
+    <ion-item *ngFor="let castor of infoMiniTab" text-wrap>
+
+      <ion-thumbnail item-left>
+        <img [src]="castor.icon"/>
+      </ion-thumbnail>
+      <h2 >{{castor.name}}</h2>
+
+  </ion-item>
+</ion-list>
+</ion-grid>
+<!--
   <ion-grid>
-
     <ion-list>
   <ion-item *ngFor="let castor of infoMiniTab" text-wrap>
     <ion-thumbnail item-left>
@@ -30,9 +66,7 @@
     <h2 >{{castor.name}}</h2>
   </ion-item>
 </ion-list>
-
-
-
   </ion-grid>
+-->
 
 </ion-content>

@@ -21284,6 +21284,10 @@ page-mes-personnages ion-content {
   background-size: cover;
 }
 
+page-minis ion-navbar ion-title {
+  text-align: left;
+}
+
 page-my-wallet ion-navbar ion-title {
   text-align: center;
 }
