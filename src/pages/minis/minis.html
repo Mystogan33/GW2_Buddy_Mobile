@@ -20,35 +20,33 @@
     <ion-title>
       <b>Mini-Pets</b>
   </ion-title>
+
+  <ion-buttons right>
+    <button ion-button icon-only (click)="logOut()">
+      <ion-icon name="log-out"></ion-icon>
+    </button>
+  </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="page-minis">
+<ion-content class="myBg">
 
-<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 <ion-grid>
-<ion-list>
-    <ion-item *ngFor="let castor of infoMiniTab" text-wrap>
+    <ion-item *ngFor="let castor of infoMiniTab" class="item-content" text-wrap no-lines>
 
       <ion-thumbnail item-left>
         <img [src]="castor.icon"/>
       </ion-thumbnail>
-      <h2 >{{castor.name}}</h2>
+      <h1><b>{{castor.name}}</b></h1>
 
   </ion-item>
-</ion-list>
 </ion-grid>
-<!--
-  <ion-grid>
-    <ion-list>
-  <ion-item *ngFor="let castor of infoMiniTab" text-wrap>
-    <ion-thumbnail item-left>
-        <img [src]="castor.icon"/>
-    </ion-thumbnail>
-    <h2 >{{castor.name}}</h2>
-  </ion-item>
-</ion-list>
-  </ion-grid>
--->
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-searchbar mode="ios" color="secondary" (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-footer>

@@ -21154,6 +21154,26 @@ page-finishers ion-card {
   text-align: center;
 }
 
+page-finishers .myBg {
+  background-color: #3a3245;
+}
+
+page-finishers .action-finishers {
+  background-color: #32db64;
+}
+
+page-finishers .item-content {
+  background-color: #32db64;
+}
+
+page-finishers .item-content h3 {
+  text-align: center;
+}
+
+page-finishers ion-title {
+  text-align: center;
+}
+
 page-finishers .card-title {
   position: absolute;
   top: 36%;
@@ -21284,8 +21304,21 @@ page-mes-personnages ion-content {
   background-size: cover;
 }
 
-page-minis ion-navbar ion-title {
-  text-align: left;
+page-minis .myBg {
+  background-color: #3a3245;
+}
+
+page-minis .item-content {
+  background-color: transparent !important;
+}
+
+page-minis .item-content h1 {
+  text-align: center;
+  color: #32db64;
+}
+
+page-minis ion-title {
+  text-align: center;
 }
 
 page-my-wallet ion-navbar ion-title {
@@ -21414,6 +21447,56 @@ page-pagePersonnage .custom-class-divider div {
 }
 
 page-pagePersonnage .custom-class-divider p {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-all {
+  background-color: #3a3245;
+}
+
+page-pagePersonnage .custom-class-divider-all h1 {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-all h2 {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-all ion-icon {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-all div {
+  color: #32db64;
+  display: inline;
+}
+
+page-pagePersonnage .custom-class-divider-all p {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-content {
+  background-color: transparent !important;
+}
+
+page-pagePersonnage .custom-class-divider-content h1 {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-content h2 {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-content ion-icon {
+  color: #32db64;
+}
+
+page-pagePersonnage .custom-class-divider-content div {
+  color: #32db64;
+  display: inline;
+}
+
+page-pagePersonnage .custom-class-divider-content p {
   color: #32db64;
 }
 

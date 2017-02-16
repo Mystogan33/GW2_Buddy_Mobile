@@ -30,6 +30,12 @@ export class MinisPage {
     console.log('Hello MinisPage Page');
   }
 
+  logOut(){
+
+    localStorage.removeItem('appKey');
+
+  }
+
   getMinis(){
     this.serv.getMyMinis().subscribe(
       data => {

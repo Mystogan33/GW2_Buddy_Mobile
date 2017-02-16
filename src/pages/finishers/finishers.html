@@ -9,27 +9,64 @@ Ionic pages and navigation.
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>finishers</ion-title>
+
+    <ion-title>Mes finishers</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
+
 </ion-header>
 
 
-<ion-content padding class="page-finishers">
+<ion-content class="myBg">
 
-  <ion-grid>
+  <!-- <ion-grid>
 
     <ion-list>
   <ion-item *ngFor="let licorne of infoFinishTab" text-wrap>
     <ion-thumbnail item-left>
         <img [src]="licorne.icon" (click)="openMenu(licorne)"/>
     </ion-thumbnail>
-    <h2 >{{licorne.name}}</h2>
+    <h2>{{licorne.name}}</h2>
   </ion-item>
 </ion-list>
 
+  </ion-grid> -->
 
-
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col width-33 *ngFor="let licorne of infoFinishTab">
+        <!-- <ion-item class="item-content"> -->
+          <img [src]="licorne.icon" (click)="openMenu(licorne)"/>
+          <!-- <h3>{{licorne.name.split("Coup de grâce du")[1]}}</h3> -->
+        <!-- </ion-item> -->
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
-
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-searchbar
+      mode="ios" color="secondary" (ionInput)="getItems($event)">
+    </ion-searchbar>
+    <ion-icon name="ios-arrow-up" item-right *ngIf="!isOpenChoice" (click)="displayCheckBox()"></ion-icon>
+    <ion-icon name="ios-arrow-down" item-right *ngIf="isOpenChoice" (click)="displayCheckBox()"></ion-icon>
+
+    <ion-item color="secondary" *ngIf="isOpenChoice">
+      <ion-label>Non Permanent</ion-label>
+      <ion-checkbox disabled="false"></ion-checkbox>
+    </ion-item>
+    <ion-item color="secondary" *ngIf="isOpenChoice">
+      <ion-label>Permanent</ion-label>
+      <ion-checkbox disabled="false"></ion-checkbox>
+    </ion-item>
+
+  </ion-toolbar>
+</ion-footer>

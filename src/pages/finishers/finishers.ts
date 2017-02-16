@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Platform, ActionSheetController } from 'ionic-angular';
+import { Platform, AlertController , ToastController } from 'ionic-angular';
 import {GW2APIProvider} from '../../providers/gw2-api-provider';
 
 
@@ -17,38 +17,28 @@ export class FinishersPage {
   permanent : any;
   quantity : any;
   finisherTab : Array<any>;
-  infoFinishTab : Array <{ icon : string , name : string , unlock_details : string}> = [];
+  infoFinishTab : Array <{icon : string , name : string , unlock_details : string , permanent : boolean}> = [];
+  cloneFinishTab : Array <{icon : string , name : string , unlock_details : string , permanent : boolean}> = [];
+  isOpenChoice : boolean = false;
 
-
-
-  constructor(public navCtrl: NavController,
-    public platform: Platform,
-    public actionsheetCtrl: ActionSheetController,
-    public serv: GW2APIProvider,
-    public navParams: NavParams
-  ) {
+  constructor(public navCtrl: NavController, public platform: Platform,
+              public alertCtrl: AlertController, public serv: GW2APIProvider,
+              public navParams: NavParams , public toastCtrl : ToastController)
+  {
      this.getFinishers();
-     //this.grid = Array(Math.ceil(this.finisherTab.length/3));
+  }
+
+initializeItems() {
+
+     this.infoFinishTab = this.cloneFinishTab;
 
   }
 
+  logOut(){
 
-  ionViewDidLoad() {
-    console.log('Hello FinishersPage Page');
+    localStorage.removeItem('appKey');
 
   }
-
-
-getFinishersInformation(idFinishers){
-  this.serv.getFinishersInformation(idFinishers).subscribe(
-    data => {
-    this.infoFinishTab.push({icon:data.icon,name:data.name,unlock_details:data.unlock_details});                                                        //this.emblem = data. de coté celui la;
-    },
-    err => {
-      alert(err);
-    },
-  );
-}
 
 getFinishers(){
 
@@ -58,7 +48,7 @@ getFinishers(){
       this.finisherTab = data;
      for(var i = 0; i < this.finisherTab.length; i++)
       {
-        this.getFinishersInformation(this.finisherTab[i].id);
+        this.getFinishersInformation(this.finisherTab[i]);
         }
 
     },
@@ -68,32 +58,55 @@ getFinishers(){
   );
 }
 
+getFinishersInformation(idFinishers)
+{
+  this.serv.getFinishersInformation(idFinishers.id).subscribe(
+    data => {
+    this.infoFinishTab.push({icon:data.icon,name:data.name,unlock_details:data.unlock_details,permanent:idFinishers.permanent});
+    this.cloneFinishTab = this.infoFinishTab;
+    },
+    err => {
+      alert(err);
+    },
+  );
+}
+
    openMenu(finisherDesc) {
 
+      let prompt = this.alertCtrl.create({
+      title: finisherDesc.name,
+      message: finisherDesc.unlock_details,
+      buttons: [
+        {
+          text: 'Compris',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
+    prompt.present();
+  }
+   }
 
+   displayCheckBox()
+   {
+     this.isOpenChoice = !this.isOpenChoice;
+   }
 
-     let actionSheet = this.actionsheetCtrl.create({
-       title: finisherDesc.name,
-       cssClass: 'action-sheets-basic-page',
-       buttons: [
-         {
-           text:  finisherDesc.unlock_details ,
+   getItems(ev: any) {
+     // Reset items back to all of the items
+     this.initializeItems();
 
-           handler: () => {
-             console.log('Favorite clicked');
-           }
-         },
-         {
-           text: 'Cancel',
-           role: 'cancel', // will always sort to be on the bottom
-           icon: !this.platform.is('ios') ? 'close' : null,
-           handler: () => {
-             console.log('Cancel clicked');
-           }
-         }
-       ]
-     });
-     actionSheet.present();
+     // set val to the value of the searchbar
+     let val = ev.target.value;
+
+     if (val && val.trim() != '') {
+         this.infoFinishTab = this.infoFinishTab.filter((finisher) => {
+           return (finisher.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+         })
+       }
+
    }
 
 

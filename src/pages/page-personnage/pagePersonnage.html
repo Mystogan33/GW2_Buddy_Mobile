@@ -19,13 +19,14 @@
 
 <ion-content class="myBg">
 
-  <ion-card class="custom-class-divider">
+  <ion-card class="custom-class-divider-content">
 
-    <ion-item-divider class="custom-class-divider">
+    <ion-item-divider class="custom-class-divider-all">
         <ion-icon name="information-circle" large item-left></ion-icon>
         <h2><b><u>informations générales</u> : </b></h2>
     </ion-item-divider>
 
+    <ion-card>
     <ion-item class="custom-class-divider">
       <ion-icon name="" large item-left></ion-icon>
       <h2><b>Race : </b>{{CharacterRace}}</h2>
@@ -71,12 +72,18 @@
       <h2><b>Nombre de morts : </b>{{CharacterDeaths}}</h2>
     </ion-item>
 
-    <ion-item-divider class="custom-class-divider">
+  </ion-card>
+
+  </ion-card>
+
+    <ion-card class="custom-class-divider-content">
+
+    <ion-item-divider class="custom-class-divider-all">
       <ion-icon name="hammer" item-left large></ion-icon>
       <h2><b><u>Métiers</u> : </b></h2>
     </ion-item-divider>
 
-    <ion-list *ngFor="let job of CharacterCrafting">
+    <ion-card *ngFor="let job of CharacterCrafting">
 
       <ion-item class="custom-class-divider" no-lines>
         <ion-icon name="" large item-left></ion-icon>
@@ -92,8 +99,7 @@
         <h2><b>Actif : </b>{{isActive(job.active)}}</h2>
       </ion-item>
 
-    </ion-list>
-
-  </ion-card>
+    </ion-card>
+    </ion-card>
 
 </ion-content>

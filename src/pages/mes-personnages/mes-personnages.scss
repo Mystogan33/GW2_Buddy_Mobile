@@ -11,6 +11,10 @@ page-mes-personnages {
   .myBg {
      background-color: color($colors,blizzard);
    }
+   
+   .color {
+     background-color: map-get($colors,"alert");
+   }
 
   .custom-class-divider {
 

@@ -12,6 +12,10 @@ page-mes-guildes {
      background-color: color($colors,blizzard);
    }
 
+   .color {
+     background-color: map-get($colors,"alert");
+   }
+
    .custom-class-divider {
 
      h2 {

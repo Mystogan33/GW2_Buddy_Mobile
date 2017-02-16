@@ -5,6 +5,29 @@ page-finishers {
   text-align: center;
 }
 
+.myBg {
+   background-color: color($colors,blizzard);
+ }
+
+ .action-finishers
+ {
+   background-color: map-get($colors,"secondary");
+ }
+
+ .item-content
+ {
+   background-color: map-get($colors,"secondary");
+   h3
+   {
+     text-align: center;
+   }
+ }
+
+ ion-title
+ {
+   text-align: center;
+ }
+
 .card-title {
   position: absolute;
   top: 36%;

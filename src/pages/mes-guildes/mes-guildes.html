@@ -19,12 +19,12 @@
 
 <ion-content class="myBg">
 
-  <ion-card class="custom-class-divider">
+  <ion-card class="custom-class-divider" *ngFor="let guild of GuildsInformations">
 
-    <button class="custom-class-divider" ion-item *ngFor="let guild of GuildsInformations" (click)="goToGuild(guild)">
-      <ion-icon name="game-controller-b" item-left large></ion-icon>
+    <ion-item class="custom-class-divider" ion-item (click)="goToGuild(guild)">
+      <ion-icon class="color" md="md-bookmark" item-left large></ion-icon>
       <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
-    </button>
+    </ion-item>
 
   </ion-card>
 

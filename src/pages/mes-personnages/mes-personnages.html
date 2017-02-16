@@ -19,9 +19,9 @@
 
 <ion-content class="myBg">
 
-  <ion-card class="custom-class-divider">
-    <button class="custom-class-divider" ion-item *ngFor="let character of characters" (click)="goToCharacter(character)">
-      <ion-icon name="game-controller-b" item-left large></ion-icon>
+  <ion-card class="custom-class-divider" *ngFor="let character of characters">
+    <button class="custom-class-divider" ion-item (click)="goToCharacter(character)">
+      <ion-icon md="md-flame" class="color" item-left large></ion-icon>
       <h2><b>{{character}}</b></h2>
     </button>
   </ion-card>
