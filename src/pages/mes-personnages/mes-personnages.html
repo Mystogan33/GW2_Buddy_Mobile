@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="danger">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -12,18 +12,116 @@
         <ion-icon name="log-out"></ion-icon>
       </button>
     </ion-buttons>
-
   </ion-navbar>
+
+  <ion-toolbar color="danger">
+    <ion-segment [(ngModel)]="selectedCategory" mode="md">
+
+      <ion-segment-button value="core">
+        Infos générales
+      </ion-segment-button>
+      <ion-segment-button value="crafting">
+        Métiers
+      </ion-segment-button>
+      <ion-segment-button value="equipment">
+        Stuff
+      </ion-segment-button>
+      <ion-segment-button value="inventory">
+        Sacs
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
 </ion-header>
 
 
 <ion-content class="myBg">
 
-  <ion-card class="custom-class-divider" *ngFor="let character of characters">
-    <button class="custom-class-divider" ion-item (click)="goToCharacter(character)">
-      <ion-icon md="md-flame" class="color" item-left large></ion-icon>
-      <h2><b>{{character}}</b></h2>
-    </button>
-  </ion-card>
+  <div [ngSwitch]="selectedCategory" *ngIf="selectedCharacter != undefined">
+
+    <ion-card  *ngSwitchCase="'core'">
+      <ion-item class="custom-class-divider">
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Race : </b>{{CharacterRace}}</h2>
+      </ion-item>
+
+      <ion-item class="custom-class-divider">
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Genre : </b>{{CharacterGenre}}</h2>
+      </ion-item>
+
+      <ion-item class="custom-class-divider">
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Profession : </b>{{CharacterProfession}}</h2>
+      </ion-item>
+
+      <ion-item class="custom-class-divider">
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
+      </ion-item>
+
+      <ion-item *ngIf="CharacterTitle" class="custom-class-divider" text-wrap>
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Titre : </b>{{CharacterTitle}}</h2>
+      </ion-item>
+
+      <div *ngIf="CharacterGuild">
+      <button class="custom-class-divider" ion-item *ngFor="let guild of CharacterGuild" (click)="goToGuild(guild)" text-wrap>
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
+      </button>
+      </div>
+
+      <ion-item class="custom-class-divider">
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Age : </b>{{CharacterAge}} jours</h2>
+      </ion-item>
+
+      <ion-item class="custom-class-divider" text-wrap>
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Date de création : </b>{{CharacterCreation}}</h2>
+      </ion-item>
+
+      <ion-item class="custom-class-divider">
+        <ion-icon name="" large item-left></ion-icon>
+        <h2><b>Nombre de morts : </b>{{CharacterDeaths}}</h2>
+      </ion-item>
+
+    </ion-card>
+
+    <ion-list *ngSwitchCase="'crafting'">
+
+      <ion-card *ngFor="let job of CharacterCrafting">
+
+      <ion-item class="custom-class-divider" no-lines>
+      <ion-icon name="" large item-left></ion-icon>
+      <h2><b>{{job.discipline}}</b></h2>
+      </ion-item>
+
+      <ion-item class="custom-class-divider">
+      <ion-icon name = "" item-left large></ion-icon>
+      <h2><b>Niveau : </b>{{job.rating}}</h2>
+      </ion-item>
+      <ion-item class="custom-class-divider" no-lines>
+      <ion-icon name = "" item-left large></ion-icon>
+      <h2><b>Actif : </b>{{isActive(job.active)}}</h2>
+      </ion-item>
+
+    </ion-card>
+    </ion-list>
+
+  </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-item color="danger" no-lines>
+      <ion-label>Choisissez un personnage : </ion-label>
+      <ion-select [(ngModel)]="selectedCharacter" placeholder="Aucun" (ionChange)="getCharacterInformations()">
+        <ion-option *ngFor="let character of characters" value="{{character}}">{{character}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

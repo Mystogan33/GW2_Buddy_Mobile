@@ -87,7 +87,6 @@ getFinishersInformation(idFinishers)
     });
     prompt.present();
   }
-   }
 
    displayCheckBox()
    {
@@ -108,6 +107,5 @@ getFinishersInformation(idFinishers)
        }
 
    }
-
 
 }

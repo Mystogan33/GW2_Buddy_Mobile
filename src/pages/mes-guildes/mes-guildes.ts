@@ -1,72 +1,65 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { GW2APIProvider}  from '../../providers/gw2-api-provider';
+import { Component , ViewChild } from '@angular/core';
+import { NavController , LoadingController ,  NavParams, Tabs } from 'ionic-angular';
 import {GuildPage} from '../guild-page/guild-page';
+import {GW2APIProvider} from '../../providers/gw2-api-provider';
+import {Http} from '@angular/http';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'page-mes-guildes',
   templateUrl: 'mes-guildes.html',
-  providers : [GW2APIProvider]
 })
 export class MesGuildesPage {
 
-  AccountGuilds : any;
-  GuildsInformations : Array<{name : string , tag : string , id : string}> = [];
+  guildRoot = GuildPage;
+  listGuilds : any = [];
+  GuildsIds : any;
 
-  constructor(public navCtrl: NavController , public serv: GW2APIProvider){
-
-    this.getGuilds();
-  }
-
-  getGuilds() {
-
-    this.serv.getAccount().subscribe(
-
-      data => {
-
-        this.AccountGuilds = data.guilds;
-
-        for(var i = 0 ; i < this.AccountGuilds.length ; i++)
-        {
-          this.getGuildName(this.AccountGuilds[i]);
-        }
-
-      },
-
-      err => {
-
-        alert(err);
-
-      },
-    );
-  }
-
-  logOut()
+  constructor(public navCtrl : NavController , public navParams : NavParams , public serv : GW2APIProvider , public http : Http , public loadingCtrl : LoadingController)
   {
-    localStorage.removeItem('appKey');
+
   }
 
-  getGuildName(idGuild)
-  {
-    this.serv.getGuildInformations(idGuild).subscribe(
+  ionViewCanEnter() {
 
-      data => {
+    return new Promise((resolve, reject) => {
 
-        this.GuildsInformations.push({name : data.name , tag: data.tag , id : data.id});
+        let loading = this.loadingCtrl.create({
+          spinner: 'crescent',
+          content: 'Chargement des guildes...'
+        });
 
-      },
+        loading.present();
 
-      err => {
+        this.serv.getAccount()
+          .subscribe(
+            (res)=> {
 
-        alert(err);
+              this.GuildsIds = res.guilds;
 
-      },
-    );
-  }
+              this.GuildsIds.forEach(idGuilds =>
+              {
+                this.http.get('https://api.guildwars2.com/v2/guild/'+idGuilds+'?access_token='+localStorage.getItem('appKey'))
+                .map(res => res.json())
+                .subscribe(
+                  (GuildName) => {
+                    this.listGuilds.push(GuildName);
+                    resolve(this.listGuilds);
+                  },
+                );
+              });
 
-  goToGuild(guild)
-  {
-    this.navCtrl.push(GuildPage , {idGuild : guild});
+            loading.dismiss();
+
+            },
+            (err)=>{
+              reject(err)
+            }
+          );
+
+    });
   }
 
 }

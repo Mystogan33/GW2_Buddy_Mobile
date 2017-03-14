@@ -1,21 +1,11 @@
 page-minis {
 
-  .myBg {
-     background-color: color($colors,blizzard);
-   }
+  ion-navbar
+  {
+    ion-title
+    {
+      text-align: center;
+    }
+  }
 
-   .item-content
-   {
-     background-color: transparent !important;
-
-     h1 {
-       text-align: center;
-       color: map-get($colors, "secondary");
-     }
-   }
-
-   ion-title
-   {
-     text-align: center;
-   }
 }

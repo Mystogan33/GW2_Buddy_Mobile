@@ -1,13 +1,21 @@
 <ion-menu type="overlay" [content]="content">
   <ion-header>
-    <ion-toolbar color="secondary">
+    <ion-toolbar color="danger">
       <ion-title>Menu</ion-title>
+      <ion-buttons left>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="myBg">
+  <ion-content class="card-background-page">
+    <ion-card>
+      <img src="assets/img/wallpaper11.jpg"/>
+      <div class="card-title">GW2 Buddy</div>
+      <div class="card-subtitle">Créé par Valentin Gay et Nicolas Gamin</div>
+    </ion-card>
+
     <ion-list>
-      <button menuClose class="custom-class-divider" ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button menuClose class="custom-class-divider" ion-item *ngFor="let p of pages" (click)="openPage(p)" mode="ios">
         <h2><b>{{p.title}}</b></h2>
       </button>
     </ion-list>

@@ -9,7 +9,8 @@ import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
 import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
 import {FinishersPage} from '../pages/finishers/finishers';
 import {MyWalletPage} from '../pages/my-wallet/my-wallet';
-import{MinisPage} from '../pages/minis/minis';
+import {MinisPage} from '../pages/minis/minis';
+import {PopOverPage} from '../pages/pop-over/pop-over';
 
 
 
@@ -24,7 +25,8 @@ import{MinisPage} from '../pages/minis/minis';
     MesGuildesPage,
     FinishersPage,
     MyWalletPage,
-    MinisPage
+    MinisPage,
+    PopOverPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +42,8 @@ import{MinisPage} from '../pages/minis/minis';
     MesGuildesPage,
     FinishersPage,
     MyWalletPage,
-    MinisPage
+    MinisPage,
+    PopOverPage
   ],
   providers: []
 })

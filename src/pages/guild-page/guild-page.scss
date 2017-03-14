@@ -1,56 +1,11 @@
 page-guild-page {
 
-  ion-navbar {
-
-    ion-title{
+  ion-navbar
+  {
+    ion-title
+    {
       text-align: center;
     }
-
-  }
-
-  .myBg {
-     background-color: color($colors,blizzard);
-   }
-
-  .title {
-    color : color($colors,secondary);
-  }
-
-  .custom-class-divider {
-
-    h1 {
-        color: color($colors,secondary);
-    }
-
-    h2 {
-        color: color($colors,secondary);
-    }
-
-    ion-icon
-    {
-      color: color($colors,secondary);
-    }
-
-    div
-    {
-      color : color($colors,secondary);
-      display: inline;
-    }
-
-    p {
-      color: color($colors,secondary);
-    }
-
-    background-color: color($colors,blizzard);
-  }
-
-  ion-content {
-    background: url('../assets/img/background.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-
   }
 
 }

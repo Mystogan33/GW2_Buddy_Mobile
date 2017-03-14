@@ -10,6 +10,7 @@
   used under CC BY http://creativecommons.org/licenses/by/4.0/
   Modified icons to fit ionicon’s grid from original.
 */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 @font-face {
   font-family: "Ionicons";
   src: url("../assets/fonts/ionicons.eot?v=3.0.0-alpha.3");
@@ -21118,206 +21119,70 @@ ion-toolbar {
   text-align: center;
 }
 
-.myBg {
-  background-color: #3a3245;
-}
-
-ion-content {
-  background: url("../assets/img/background.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
-}
-
-.custom-class-divider {
-  background-color: #3a3245;
-}
-
-.custom-class-divider h2 {
-  color: #32db64;
-}
-
-.custom-class-divider div {
-  color: #32db64;
-}
-
-.custom-class-divider p {
-  color: #32db64;
-}
-
-.custom-class-divider img {
-  height: 30px;
-  width: 30px;
-}
-
-page-finishers ion-card {
+.card-background-page ion-card {
   position: relative;
   text-align: center;
+  width: 100%;
+  height: 28.5%;
+  margin: 0 0 0 0;
 }
 
-page-finishers .myBg {
-  background-color: #3a3245;
+.card-background-page ion-list {
+  background-color: transparent !important;
 }
 
-page-finishers .action-finishers {
-  background-color: #32db64;
+.card-background-page ion-item {
+  background-color: transparent !important;
 }
 
-page-finishers .item-content {
-  background-color: #32db64;
+.card-background-page button {
+  background-color: transparent !important;
 }
 
-page-finishers .item-content h3 {
-  text-align: center;
+.card-background-page button h2 {
+  color: white;
 }
 
-page-finishers ion-title {
-  text-align: center;
-}
-
-page-finishers .card-title {
+.card-background-page .card-title {
   position: absolute;
   top: 36%;
   font-size: 2.0em;
   width: 100%;
   font-weight: bold;
-  color: #222;
+  color: #fff;
 }
 
-page-finishers .card-subtitle {
+.card-background-page .card-subtitle {
   font-size: 1.0em;
   position: absolute;
-  top: 52%;
+  top: 60%;
   width: 100%;
-  color: #222;
+  color: #fff;
+}
+
+ion-content {
+  background: url("../assets/img/background7.jpg") no-repeat center center fixed;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+page-finishers ion-navbar ion-title {
+  text-align: center;
 }
 
 page-guild-page ion-navbar ion-title {
   text-align: center;
 }
 
-page-guild-page .myBg {
-  background-color: #3a3245;
-}
-
-page-guild-page .title {
-  color: #32db64;
-}
-
-page-guild-page .custom-class-divider {
-  background-color: #3a3245;
-}
-
-page-guild-page .custom-class-divider h1 {
-  color: #32db64;
-}
-
-page-guild-page .custom-class-divider h2 {
-  color: #32db64;
-}
-
-page-guild-page .custom-class-divider ion-icon {
-  color: #32db64;
-}
-
-page-guild-page .custom-class-divider div {
-  color: #32db64;
-  display: inline;
-}
-
-page-guild-page .custom-class-divider p {
-  color: #32db64;
-}
-
-page-guild-page ion-content {
-  background: url("../assets/img/background.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
-}
-
 page-mes-guildes ion-navbar ion-title {
   text-align: center;
-}
-
-page-mes-guildes .myBg {
-  background-color: #3a3245;
-}
-
-page-mes-guildes .custom-class-divider {
-  background-color: #3a3245;
-}
-
-page-mes-guildes .custom-class-divider h2 {
-  color: #32db64;
-}
-
-page-mes-guildes .custom-class-divider div {
-  color: #32db64;
-}
-
-page-mes-guildes .custom-class-divider p {
-  color: #32db64;
-}
-
-page-mes-guildes .custom-class-divider img {
-  height: 30px;
-  width: 30px;
-}
-
-page-mes-guildes ion-content {
-  background: url("../assets/img/background.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
 }
 
 page-mes-personnages ion-navbar ion-title {
   text-align: center;
 }
 
-page-mes-personnages .myBg {
-  background-color: #3a3245;
-}
-
-page-mes-personnages .custom-class-divider {
-  background-color: #3a3245;
-}
-
-page-mes-personnages .custom-class-divider h2 {
-  color: #32db64;
-}
-
-page-mes-personnages .custom-class-divider div {
-  color: #32db64;
-}
-
-page-mes-personnages .custom-class-divider p {
-  color: #32db64;
-}
-
-page-mes-personnages .custom-class-divider img {
-  height: 30px;
-  width: 30px;
-}
-
-page-mes-personnages ion-content {
-  background: url("../assets/img/background.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
-}
-
-page-minis .myBg {
-  background-color: #3a3245;
-}
-
-page-minis .item-content {
-  background-color: transparent !important;
-}
-
-page-minis .item-content h1 {
-  text-align: center;
-  color: #32db64;
-}
-
-page-minis ion-title {
+page-minis ion-navbar ion-title {
   text-align: center;
 }
 
@@ -21325,183 +21190,94 @@ page-my-wallet ion-navbar ion-title {
   text-align: center;
 }
 
-page-my-wallet .custom-class-divider {
-  background-color: #3a3245;
-}
-
-page-my-wallet .custom-class-divider h2 {
-  color: #32db64;
-}
-
-page-my-wallet .custom-class-divider div {
-  color: #32db64;
-}
-
-page-my-wallet .custom-class-divider p {
-  color: #32db64;
-}
-
-page-my-wallet .custom-class-divider img {
-  height: 30px;
-  width: 30px;
-}
-
-page-my-wallet ion-content {
-  background: url("../assets/img/GW2.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
-}
-
 page-page-account ion-navbar ion-title {
   text-align: center;
 }
 
-page-page-account .myBg {
-  background-color: #3a3245;
-}
-
-page-page-account .title {
-  color: #222;
-}
-
-page-page-account .custom-class-divider {
-  background-color: #3a3245;
-}
-
-page-page-account .custom-class-divider h2 {
-  color: #32db64;
-}
-
-page-page-account .custom-class-divider div {
-  color: #32db64;
-}
-
-page-page-account .custom-class-divider p {
-  color: #32db64;
-}
-
-page-page-account ion-content {
-  background: url("../assets/img/background.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
+page-pageAccueil .scroll-content {
+  overflow-y: hidden;
 }
 
 page-pageAccueil ion-navbar ion-title {
   text-align: center;
 }
 
-page-pageAccueil .myBg {
-  background-color: #3a3245;
+page-pageAccueil ion-slide {
+  background-color: #212121;
 }
 
-page-pageAccueil .custom-class-divider {
-  background-color: #3a3245;
+page-pageAccueil ion-slide .text-presentation {
+  background-color: transparent !important;
+  padding: 15px;
 }
 
-page-pageAccueil .custom-class-divider h2 {
-  color: #32db64;
+page-pageAccueil ion-slide .text-presentation h2 {
+  color: #e53935;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
-page-pageAccueil .custom-class-divider div {
-  color: #32db64;
-  display: inline;
+page-pageAccueil ion-slide .text-presentation p {
+  color: #bbdefb;
+  font-size: 19px;
+  font-family: 'Roboto', sans-serif;
 }
 
-page-pageAccueil .custom-class-divider p {
-  color: #32db64;
+page-pageAccueil ion-slide .text-presentation button {
+  padding: 15px;
+  color: #e53935;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+page-pageAccueil ion-slide .slide-zoom {
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+page-pageAccueil ion-slide .toolbar-background {
+  border-color: transparent;
+}
+
+page-pageAccueil ion-slide ion-card.adv-map {
+  border-radius: 20px;
+}
+
+page-pageAccueil ion-slide ion-card.adv-map ion-item {
+  background-color: #212121;
+}
+
+page-pageAccueil ion-slide ion-card.adv-map img {
+  height: 25%;
+  width: 100%;
+}
+
+page-pageAccueil ion-slide ion-card.adv-map h2 {
+  font-size: 1.8em !important;
+  color: #e53935;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+page-pageAccueil ion-slide ion-card.adv-map p {
+  font-size: 1.3em !important;
+  color: #bbdefb;
+  font-family: 'Roboto', sans-serif;
+}
+
+page-pageAccueil ion-slide ion-card.adv-map button[fab].fab-map {
+  top: calc(100% - 35px);
+  z-index: 50;
 }
 
 page-pageAccueil ion-content {
-  background: url("../assets/img/background.png") no-repeat center center fixed;
+  background: url("../assets/img/background1.jpg") no-repeat center center fixed;
   -ms-background-size: cover;
   background-size: cover;
 }
 
 page-pagePersonnage ion-navbar ion-title {
   text-align: center;
-}
-
-page-pagePersonnage .myBg {
-  background-color: #3a3245;
-}
-
-page-pagePersonnage .custom-class-divider {
-  background-color: #3a3245;
-}
-
-page-pagePersonnage .custom-class-divider h1 {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider h2 {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider ion-icon {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider div {
-  color: #32db64;
-  display: inline;
-}
-
-page-pagePersonnage .custom-class-divider p {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-all {
-  background-color: #3a3245;
-}
-
-page-pagePersonnage .custom-class-divider-all h1 {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-all h2 {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-all ion-icon {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-all div {
-  color: #32db64;
-  display: inline;
-}
-
-page-pagePersonnage .custom-class-divider-all p {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-content {
-  background-color: transparent !important;
-}
-
-page-pagePersonnage .custom-class-divider-content h1 {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-content h2 {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-content ion-icon {
-  color: #32db64;
-}
-
-page-pagePersonnage .custom-class-divider-content div {
-  color: #32db64;
-  display: inline;
-}
-
-page-pagePersonnage .custom-class-divider-content p {
-  color: #32db64;
-}
-
-page-pagePersonnage ion-content {
-  background: url("../assets/img/GW2.png") no-repeat center center fixed;
-  -ms-background-size: cover;
-  background-size: cover;
 }

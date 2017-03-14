@@ -14,44 +14,69 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
 ion-toolbar
 {
-  text-align: center;
+
+    text-align: center;
+
 }
 
-.myBg {
-   background-color: color($colors,blizzard);
- }
+.card-background-page {
 
- ion-content {
-   background: url('../assets/img/background.png') no-repeat center center fixed;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -ms-background-size: cover;
-   background-size: cover;
+  ion-card {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 28.5%;
+    margin: 0 0 0 0;
 
- }
+  }
 
- .custom-class-divider {
+  ion-list
+  {
+    background-color: transparent !important;
+  }
 
-   h2 {
-     color: color($colors,secondary);
-   }
+  ion-item
+  {
+    background-color: transparent !important;
 
-   div
-   {
-     color : color($colors,secondary);
-   }
+  }
 
-   p {
-     color: color($colors,secondary);
-   }
+  button
+  {
+    background-color: transparent !important;
 
-   img {
-     height: 30px;
-     width: 30px;
-   }
+    h2
+    {
+      color : white;
+    }
+  }
 
-   background-color: color($colors,blizzard);
- }
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+
+ion-content {
+  background: url('../assets/img/background7.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+
+}

@@ -1,31 +1,3 @@
-<ion-header>
-  <ion-navbar color="secondary">
-
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-
-    <ion-title>Mes guildes</ion-title>
-
-    <ion-buttons right>
-      <button ion-button icon-only (click)="logOut()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-
-  </ion-navbar>
-</ion-header>
-
-
-<ion-content class="myBg">
-
-  <ion-card class="custom-class-divider" *ngFor="let guild of GuildsInformations">
-
-    <ion-item class="custom-class-divider" ion-item (click)="goToGuild(guild)">
-      <ion-icon class="color" md="md-bookmark" item-left large></ion-icon>
-      <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
-    </ion-item>
-
-  </ion-card>
-
-</ion-content>
+<ion-tabs color="danger" selectedIndex="0" tabsPlacement="bottom">
+    <ion-tab *ngFor="let guild of listGuilds" [tabTitle]="guild.name" [root]="guildRoot" [rootParams]="{guild : guild}" tabIcon="star"></ion-tab>
+</ion-tabs>

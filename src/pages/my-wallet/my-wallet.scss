@@ -1,43 +1,11 @@
 page-my-wallet {
 
-  ion-navbar {
-
-    ion-title{
+  ion-navbar
+  {
+    ion-title
+    {
       text-align: center;
     }
-
-  }
-
-  .custom-class-divider {
-
-    h2 {
-      color: color($colors,secondary);
-    }
-
-    div
-    {
-      color : color($colors,secondary);
-    }
-
-    p {
-      color: color($colors,secondary);
-    }
-
-    img {
-      height: 30px;
-      width: 30px;
-    }
-
-    background-color: color($colors,blizzard);
-  }
-
-  ion-content {
-    background: url('../assets/img/GW2.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-
   }
 
 }

@@ -8,22 +8,25 @@ export class GW2APIProvider {
 
   appKey : any;
 
+  guilds : any;
+
   constructor(public http: Http) {
 
     this.appKey = localStorage.getItem('appKey');
 
   }
 
-  getAccount(): Observable<any> {
-
-    return this.http.get('https://api.guildwars2.com/v2/account?access_token='+this.appKey)
-    .map(res => res.json());
-
-  }
-
+  // Personnages
   getCharacters(): Observable<any> {
 
     return this.http.get('https://api.guildwars2.com/v2/characters?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
+  // Compte
+  getAccount(): Observable<any> {
+
+    return this.http.get('https://api.guildwars2.com/v2/account?access_token='+this.appKey)
     .map(res => res.json());
 
   }
@@ -32,13 +35,12 @@ export class GW2APIProvider {
 
     return this.http.get('https://api.guildwars2.com/v2/guild/'+idGuild+'?access_token='+this.appKey)
     .map(res => res.json());
-
   }
 
   getTitleInformations(title): Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/titles/'+title+'?access_token='+this.appKey)
-    .map(res => res.json());
+
   }
 
   getCharacterInformations(idCharacter): Observable<any> {
@@ -48,6 +50,12 @@ export class GW2APIProvider {
 
   }
 
+  getEquipmentInformations(id) : Observable<any> {
+    return this.http.get('https://api.guildwars2.com/v2/items/'+id)
+    .map(res => res.json());
+  }
+
+  // Finishers
   getMyFinishers() : Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
@@ -60,7 +68,7 @@ export class GW2APIProvider {
     .map(res => res.json());
   }
 
-
+  // Portefeuille
   getMyWallet(): Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/account/wallet?access_token='+this.appKey)
@@ -73,7 +81,7 @@ export class GW2APIProvider {
     .map(res => res.json());
   }
 
-
+  // Minis
   getMyMinis() : Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/account/minis?access_token='+this.appKey)

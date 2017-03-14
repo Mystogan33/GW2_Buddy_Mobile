@@ -1,38 +1,96 @@
 page-pageAccueil {
 
+  .scroll-content
+  {
+    overflow-y: hidden;
+  }
+
   ion-navbar {
 
-    ion-title{
+    ion-title {
       text-align: center;
+    }
+  }
+
+  ion-slide {
+
+    background-color: #212121;
+
+    .text-presentation
+    {
+      background-color: transparent !important;
+      padding: 15px;
+
+      h2 {
+        color: #e53935;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+      }
+
+      p {
+        color: #bbdefb;
+        font-size: 19px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      button {
+        padding: 15px;
+        color: #e53935;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+
+    .slide-zoom {
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+
+    .toolbar-background {
+
+      border-color: transparent;
+    }
+
+    ion-card.adv-map {
+
+      border-radius: 20px;
+
+      ion-item {
+        background-color: #212121;
+      }
+
+      img {
+        height: 25%;
+        width:100%
+      }
+
+      h2 {
+        font-size: 1.8em !important;
+        color: #e53935;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      p {
+        font-size:  1.3em !important;
+        color: #bbdefb;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      button[fab].fab-map {
+        top: calc(100% - 35px);
+        z-index: 50;
+      }
+
     }
 
   }
 
-  .myBg {
-     background-color: color($colors,blizzard);
-   }
-
-   .custom-class-divider {
-
-     h2 {
-       color: color($colors,secondary);
-     }
-
-     div
-     {
-       color : color($colors,secondary);
-       display: inline;
-     }
-
-     p {
-       color: color($colors,secondary);
-     }
-
-     background-color: color($colors,blizzard);
-   }
-
   ion-content {
-    background: url('../assets/img/background.png') no-repeat center center fixed;
+
+    background : url('../assets/img/background1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
@@ -40,6 +98,6 @@ page-pageAccueil {
 
   }
 
-
-
 }
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');

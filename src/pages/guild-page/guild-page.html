@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="danger">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-title>{{guildName.name}}</ion-title>
+    <ion-title>{{guild.name}}</ion-title>
 
     <ion-buttons right>
       <button ion-button icon-only (click)="logOut()">
@@ -17,63 +17,50 @@
 </ion-header>
 
 
-<ion-content class="myBg">
-
+<ion-content>
   <ion-card>
 
-    <ion-item-divider class="custom-class-divider">
-        <ion-icon name="information-circle" large item-left></ion-icon>
-        <h2><b>informations sur la guilde : </b></h2>
-    </ion-item-divider>
-
-
-    <ion-item class="custom-class-divider">
+    <ion-item>
       <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Tag de guilde :</b> {{tag}} </h2>
+      <h2> <b> Tag de guilde :</b> {{guild.tag}} </h2>
     </ion-item>
 
-    <ion-item class="custom-class-divider">
+    <ion-item>
       <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Niveau de la guilde :</b> {{lvl}} </h2>
+      <h2> <b> Niveau de la guilde :</b> {{guild.level}} </h2>
     </ion-item>
 
 
-    <ion-item text-wrap class="custom-class-divider">
+    <ion-item text-wrap>
       <ion-icon name = "" item-left large></ion-icon>
       <h2> <b> Message de guilde :</b></h2>
       <ion-card-content>
         <p>
-         {{msg}}
+         {{guild.motd}}
        </p>
       </ion-card-content>
     </ion-item>
 
 
-    <ion-item class="custom-class-divider">
+    <ion-item>
       <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Influence :</b> {{influ}} </h2>
+      <h2> <b> Influence :</b> {{guild.influence}} </h2>
     </ion-item>
 
-    <ion-item class="custom-class-divider">
+    <ion-item>
       <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Aetherium :</b> {{aether}} </h2>
+      <h2> <b> Aetherium :</b> {{guild.aetherium}} </h2>
     </ion-item>
 
-    <ion-item class="custom-class-divider">
+    <ion-item>
       <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Resonance :</b> {{rez}} </h2>
+      <h2> <b> Resonance :</b> {{guild.resonance}} </h2>
     </ion-item>
 
-    <ion-item class="custom-class-divider">
+    <ion-item>
       <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Faveur :</b> {{faveur}} </h2>
+      <h2> <b> Faveur :</b> {{guild.favor}} </h2>
     </ion-item>
-
-    <button class="custom-class-divider" ion-item *ngFor="let guild of GuildsInformations" (click)="getGuild(guild)">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2><b>{{guild.name}} [{{guild.tag}}]</b></h2>
-    </button>
 
   </ion-card>
-
 </ion-content>

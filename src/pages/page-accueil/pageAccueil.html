@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="danger">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -8,9 +8,6 @@
     <ion-title>Accueil</ion-title>
 
     <ion-buttons right>
-      <button ion-button icon-only (click)="enterKey()">
-        <ion-icon name="key"></ion-icon>
-      </button>
       <button ion-button icon-only (click)="logOut()">
         <ion-icon name="log-out"></ion-icon>
       </button>
@@ -21,17 +18,198 @@
 
 <ion-content class="myBg">
 
-    <ion-row wrap>
-      <ion-col>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-        <button ion-button color="secondary" large>Lol</button>
-      </ion-col>
-    </ion-row>
+  <ion-content>
 
-</ion-content>
+    <ion-slides>
+      <ion-slide>
+        <ion-toolbar>
+        </ion-toolbar>
+        <div class="text-presentation">
+          <h2>Qu'est-ce que GW2 ? </h2>
+          <p>
+            Guild Wars 2 est un jeu de rôle en ligne massivement multijoueur (MMORPG) développé par ArenaNet et distribué par NCsoft,
+            sorti le 28 août 2012. Son développement a été révélé en mars 2007.
+          </p>
+          <p>
+            Le jeu se déroule en Tyrie, 250 ans après les événements de Guild Wars,
+            à la suite de plusieurs cataclysmes causés par le réveil des dragons ancestraux,
+            des créatures qui peuvent rivaliser avec les Dieux.
+          </p>
+
+          <p>
+            Mais si vous êtes ici vous devez déjà le savoir !
+          </p>
+
+            <button ion-button large clear icon-right color="danger">
+              Swipe vers la gauche !
+              <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-toolbar>
+          </ion-toolbar>
+          <div class="text-presentation">
+            <h2>Mais à quoi sert cette application ?</h2>
+            <p>
+                Cette application est un compagnon mobile permettant de consulter les informations de ton compte.
+            </p>
+            <p>
+              Comme par exemple tes personnages , tes guildes , ton inventaire etc..
+            </p>
+            <p>
+              Pour pouvoir y accéder , il suffit d'une clé d'authentification disponible sur ton espace personnel.
+            </p>
+
+              <button ion-button large clear icon-right color="danger">
+                Comment obtenir ma clé ?
+                <ion-icon name="arrow-forward"></ion-icon>
+              </button>
+            </div>
+          </ion-slide>
+
+          <ion-slide scroll="false">
+            <ion-toolbar>
+            </ion-toolbar>
+
+            <ion-card class="adv-map">
+              <div style="position: relative">
+                <img src="assets/img/tuto1.jpg">
+
+                <ion-fab right top>
+                  <button ion-fab color="danger" class="fab-map">
+                    <ion-icon name="md-send"></ion-icon>
+                  </button>
+                </ion-fab>
+              </div>
+              <ion-item class="item-tuto" text-wrap>
+                <span>
+                  <h2>Connecte toi en cliquant sur le bouton ci-dessus !</h2>
+                </span>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap>
+                <ion-icon color="danger" large item-left icon-right name='cloud'></ion-icon>
+                <p>Ou en allant sur le site <a href="#">https://account.arena.net/applications</a></p>
+              </ion-item>
+              <ion-item actions class="footer-tuto">
+                <span ion-text item-left color="danger">Etape 1</span>
+                <span ion-text item-left color="secondary">(sur 4)</span>
+                <button ion-button color="danger" clear item-right icon-left>
+                  <ion-icon name="md-close"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-card>
+
+            <ion-card class="adv-map">
+              <div style="position: relative">
+                <img src="assets/img/tuto2.jpg">
+
+                <ion-fab right top>
+                  <button ion-fab color="danger" class="fab-map">
+                    <ion-icon name="md-send"></ion-icon>
+                  </button>
+                </ion-fab>
+              </div>
+              <ion-item class="item-tuto" text-wrap>
+                <span ion-text>
+                  <h2>Crée ta clé !</h2>
+                </span>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap lines>
+                <ion-icon color="danger" large item-left icon-right name='md-arrow-forward'></ion-icon>
+                <p>Clique sur "Nouvelle clé" dans la section "Clé d'applications"</p>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap lines>
+                <ion-icon color="danger" large item-left icon-right name='md-arrow-forward'></ion-icon>
+                <p>Selectionne les informations que tu souhaite visualiser</p>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap lines>
+                <ion-icon color="danger" large item-left icon-right name='md-information'></ion-icon>
+                <p>Ces informations sont uniquement en consultation , pas de risque <ion-icon  color="primary" item-right icon-right name="md-happy"></ion-icon></p>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap lines>
+                <ion-icon color="danger" large item-left icon-right name='md-arrow-forward'></ion-icon>
+                <p>Clique sur le bouton "Créer une clé d'application" </p>
+              </ion-item>
+              <ion-item actions class="footer-tuto">
+                <span ion-text item-left color="danger">Etape 2</span>
+                <span ion-text item-left color="secondary">(sur 4)</span>
+                <button ion-button color="danger" clear item-right icon-left>
+                  <ion-icon name="md-close"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-card>
+
+            <ion-card class="adv-map">
+              <div style="position: relative">
+                <img src="assets/img/tuto3.jpg">
+
+                <ion-fab right top>
+                  <button ion-fab color="danger" class="fab-map">
+                    <ion-icon name="md-send"></ion-icon>
+                  </button>
+                </ion-fab>
+              </div>
+              <ion-item class="item-tuto" text-wrap>
+                <span ion-text>
+                  <h2>Copie ensuite ta clé</h2>
+                </span>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap lines>
+                <ion-icon color="danger" large item-left icon-right name='md-copy'></ion-icon>
+                <p>Une petite icône te permet de la copier</p>
+              </ion-item>
+              <ion-item actions class="footer-tuto">
+                <span ion-text item-left color="danger">Etape 3</span>
+                <span ion-text item-left color="secondary">(sur 4)</span>
+                <button ion-button color="danger" clear item-right icon-left>
+                  <ion-icon name="md-close"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-card>
+
+            <ion-card class="adv-map">
+              <div style="position: relative">
+                <img src="assets/img/tuto4.jpg">
+                <ion-fab right top>
+                  <button ion-fab color="danger" class="fab-map">
+                    <ion-icon name="md-send"></ion-icon>
+                  </button>
+                </ion-fab>
+              </div>
+              <ion-item class="item-tuto" text-wrap>
+                <span ion-text>
+                  <h2>Rentre ensuite ta clé dans l'application</h2>
+                </span>
+              </ion-item>
+              <ion-item class="item-tuto" text-wrap>
+                <ion-icon color="danger" large item-left icon-left name='md-help'></ion-icon>
+                <p>En cliquant sur le bouton paramètre en bas à droite de cette page puis sur le bouton en forme de clé.</p>
+              </ion-item>
+              <ion-item actions class="footer-tuto">
+                <span ion-text item-left color="secondary">Etape 4</span>
+                <span ion-text item-left color="secondary">(sur 4)</span>
+                <button ion-button color="secondary" clear item-right icon-left>
+                  <ion-icon name="md-checkmark"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-card>
+
+          </ion-slide>
+
+        </ion-slides>
+
+        <ion-fab bottom right>
+          <button ion-fab color="danger"><ion-icon name="settings"></ion-icon></button>
+          <ion-fab-list side="top">
+            <button ion-fab color="primary"><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab color="primary"><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab color="danger"><ion-icon name="logo-youtube"></ion-icon></button>
+          </ion-fab-list>
+          <ion-fab-list side="left">
+            <button ion-fab color="danger" (click)="enterKey()"><ion-icon name="key"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+
+      </ion-content>
