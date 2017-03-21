@@ -5,7 +5,7 @@ See http://ionicframework.com/docs/v2/components/#navigation for more info on
 Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="secondary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -25,26 +25,10 @@ Ionic pages and navigation.
 
 <ion-content class="myBg">
 
-  <!-- <ion-grid>
-
-    <ion-list>
-  <ion-item *ngFor="let licorne of infoFinishTab" text-wrap>
-    <ion-thumbnail item-left>
-        <img [src]="licorne.icon" (click)="openMenu(licorne)"/>
-    </ion-thumbnail>
-    <h2>{{licorne.name}}</h2>
-  </ion-item>
-</ion-list>
-
-  </ion-grid> -->
-
   <ion-grid>
     <ion-row wrap>
       <ion-col width-33 *ngFor="let licorne of infoFinishTab">
-        <!-- <ion-item class="item-content"> -->
           <img [src]="licorne.icon" (click)="openMenu(licorne)"/>
-          <!-- <h3>{{licorne.name.split("Coup de grâce du")[1]}}</h3> -->
-        <!-- </ion-item> -->
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -52,18 +36,18 @@ Ionic pages and navigation.
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="danger">
+  <ion-toolbar color="secondary">
     <ion-searchbar
-      mode="ios" color="danger" (ionInput)="getItems($event)">
+      mode="ios" color="secondary" (ionInput)="getItems($event)">
     </ion-searchbar>
     <ion-icon name="ios-arrow-up" item-right *ngIf="!isOpenChoice" (click)="displayCheckBox()"></ion-icon>
     <ion-icon name="ios-arrow-down" item-right *ngIf="isOpenChoice" (click)="displayCheckBox()"></ion-icon>
 
-    <ion-item color="danger" *ngIf="isOpenChoice">
+    <ion-item color="secondary" *ngIf="isOpenChoice">
       <ion-label>Non Permanent</ion-label>
       <ion-checkbox disabled="false"></ion-checkbox>
     </ion-item>
-    <ion-item color="danger" *ngIf="isOpenChoice">
+    <ion-item color="secondary" *ngIf="isOpenChoice">
       <ion-label>Permanent</ion-label>
       <ion-checkbox disabled="false"></ion-checkbox>
     </ion-item>

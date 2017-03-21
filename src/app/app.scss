@@ -1,21 +1,4 @@
-// http://ionicframework.com/docs/v2/theming/
-
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-ion-toolbar
-{
+ion-toolbar {
 
     text-align: center;
 
@@ -30,45 +13,44 @@ ion-toolbar
     height: 28.5%;
     margin: 0 0 0 0;
 
+    div.card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    div.card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 60%;
+      width: 100%;
+      color: #fff;
+    }
+
   }
 
-  ion-list
-  {
-    background-color: transparent !important;
-  }
+  ion-list {
 
-  ion-item
-  {
-    background-color: transparent !important;
-
-  }
-
-  button
-  {
-    background-color: transparent !important;
-
-    h2
+    button
     {
-      color : white;
+      background-color: color($colors,"light");
+      opacity: 0.5;
+
+      h2
+      {
+        color :#212121;
+      }
+    }
+
+    button:hover
+    {
+      opacity: 1;
     }
   }
 
-  .card-title {
-    position: absolute;
-    top: 36%;
-    font-size: 2.0em;
-    width: 100%;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  .card-subtitle {
-    font-size: 1.0em;
-    position: absolute;
-    top: 60%;
-    width: 100%;
-    color: #fff;
-  }
 
 }
 
@@ -79,4 +61,177 @@ ion-content {
   -ms-background-size: cover;
   background-size: cover;
 
+}
+
+// Pop up Android
+.alert-md .alert-wrapper {
+    max-width: 280px;
+    border-radius: 13px;
+    background-color: color($colors,"red-lighten-1");
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+
+.alert-md .alert-head {
+    padding: 24px 24px 20px 24px;
+    background-color: color($colors,"red-lighten-1");
+    text-align: left;
+    color: white;
+    border-radius: 13px 13px 0px 0px;
+}
+
+.alert-md .alert-title {
+    font-size: 18px;
+}
+
+.alert-md .alert-input
+{
+    margin: 5px 0 5px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid #bbdefb;
+    color : #bbdefb ;
+
+    &:focus
+    {
+        border-bottom: 1px solid color($colors,"red-lighten-1");
+    }
+}
+
+.alert-md .alert-radio-group, .alert-md .alert-checkbox-group {
+    position: relative;
+    overflow: auto;
+    max-height: 240px;
+
+    background-color: white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.alert-md .alert-radio-label {
+    color: color($colors,"red-lighten-1");
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.alert-md [aria-checked=true] .alert-radio-icon {
+    border-color: color($colors,"red-lighten-1");
+}
+
+// Buttons
+.alert-md .alert-button-group {
+    padding: 5px 5px 5px 0px;
+    background-color: color($colors,"red-lighten-1");
+    color: white;
+    border-radius: 0px 0px 13px 13px;
+}
+
+.alert-md .alert-button {
+    position: relative;
+    overflow: hidden;
+    margin: 0px 16px 0px 0px;
+    padding: 10px;
+    border-radius: 2px;
+    font-weight: 500;
+    text-align: right;
+    text-transform: uppercase;
+    color: white;
+    background-color: transparent;
+
+  }
+
+// Pop up IOS
+.alert-ios .alert-wrapper {
+    overflow: hidden;
+    max-width: 270px;
+    border-radius: 13px;
+    background-color: #212121 ;
+    box-shadow: none;
+}
+
+.alert-ios .alert-head {
+    padding: 12px 16px 7px;
+    text-align: center;
+    color: color($colors,"red-lighten-1");
+}
+
+.alert-ios .alert-input {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: 10px;
+    padding: 6px;
+    border: 0.55px solid #bbdefb;
+    border-radius: 4px;
+    color: #bbdefb;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: #212121;
+
+    &:focus
+    {
+      border: 0.55px solid color($colors,"red-lighten-1");
+    }
+}
+
+.alert-ios .alert-button {
+    overflow: hidden;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin: 0;
+    min-width: 50%;
+    height: 44px;
+    border-top: 0.55px solid color($colors,"red-lighten-1");
+    border-right: 0.55px solid color($colors,"red-lighten-1");
+    border-radius: 0;
+    font-size: 17px;
+    color: color($colors,"red-lighten-1");
+    background-color: transparent;
+}
+
+ // Pop-up Windows
+.alert-wp .alert-wrapper {
+    width: 100%;
+    max-width: 520px;
+    border: 1px solid #212121;
+    border-radius: 0;
+    background: #212121 ;
+}
+
+.alert-wp .alert-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: color($colors,"red-lighten-1");
+}
+
+.alert-wp .alert-input {
+    margin: 5px 0 5px 0;
+    padding: 0 8px;
+    border: 2px solid #bbdefb;
+    line-height: 3rem;
+    color: #bbdefb ;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+
+    &:focus
+    {
+      border: 2px solid color($colors,"red-lighten-1");
+    }
+}
+
+*::-webkit-input-placeholder {
+  color: #bbdefb !important ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+*:-moz-placeholder {
+  color: #bbdefb !important ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+*:-ms-input-placeholder {
+  color: #bbdefb !important ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }

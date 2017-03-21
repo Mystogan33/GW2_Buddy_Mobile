@@ -1,11 +1,25 @@
 page-mes-personnages {
 
-  ion-navbar
-  {
-    ion-title
-    {
+  ion-navbar {
+
+    ion-title {
       text-align: center;
     }
   }
 
+  .segment-md .segment-button {
+    color: white;
 }
+
+  ion-content {
+    background: url('../assets/img/ListePersonnages.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+  }
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController , LoadingController } from 'ionic-angular';
+import { Component , ViewChild} from '@angular/core';
+import { NavController , LoadingController , Select } from 'ionic-angular';
 import {GW2APIProvider} from '../../providers/gw2-api-provider';
 import {PagePersonnagePage} from '../page-personnage/pagePersonnage';
 import {GuildPage} from '../guild-page/guild-page';
@@ -14,6 +14,8 @@ export class MesPersonnagesPage {
  selectedCharacter : any = undefined;
  selectedCategory : any;
  characters: Array<{nom: string}> = [];
+
+ @ViewChild('selectPersonnage') selectPersonnage: Select;
 
  CharacterName : any;
  CharacterRace : any;
@@ -32,40 +34,54 @@ export class MesPersonnagesPage {
 
   constructor(public navCtrl: NavController , public serv : GW2APIProvider , public loadingCtrl : LoadingController) {
 
-    this.getCharacters();
+  }
 
+  ionViewCanEnter() {
+
+    //return new Promise((resolve, reject) => {
+
+      // let loading = this.loadingCtrl.create({
+      //
+      //   spinner : 'crescent',
+      //   content: 'Chargement des personnages...'
+      //   });
+
+      //loading.present();
+
+      this.serv.getCharacters().subscribe(
+
+        data => {
+
+          this.characters = data;
+          //resolve(this.characters);
+
+        //  loading.dismiss();
+
+        },
+
+        err => {
+
+          alert(err);
+
+        },
+      );
+
+  //  });
+  }
+
+  ionViewDidEnter()
+  {
+    this.selectPersonnage.open();
+  }
+
+  changeCharacter()
+  {
+    this.getCharacterInformations();
   }
 
   logOut()
   {
     localStorage.removeItem('appKey');
-  }
-
-  getCharacters()
-  {
-    let loading = this.loadingCtrl.create({
-
-      spinner : 'crescent',
-      content: 'Chargement des personnages...'
-      });
-
-    loading.present();
-
-    this.serv.getCharacters().subscribe(
-
-      data => {
-
-        this.characters = data;
-        loading.dismiss();
-
-      },
-
-      err => {
-
-        alert(err);
-
-      },
-    );
   }
 
   getCharacterInformations()
@@ -99,7 +115,7 @@ export class MesPersonnagesPage {
         // Equipments
         this.CharacterEquipment = data.equipment;
 
-        loading.dismiss();
+        this.selectedCategory = "core";
 
       },
 

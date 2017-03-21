@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { GW2APIProvider } from '../../providers/gw2-api-provider'
-import { NavController , AlertController } from 'ionic-angular';
+import { NavController , AlertController , ToastController } from 'ionic-angular';
 import { Vibration } from 'ionic-native';
+import { InAppBrowser } from 'ionic-native';
 
 @Component({
   selector: 'page-pageAccueil',
@@ -14,7 +15,7 @@ export class pageAccueil {
 
   slides : Array<any>
 
-  constructor(public navCtrl: NavController , public alertCtrl : AlertController ,public service : GW2APIProvider) {
+  constructor(public navCtrl: NavController , public alertCtrl : AlertController ,public service : GW2APIProvider , public toastCtrl : ToastController) {
 
     this.slides = [
       {
@@ -48,6 +49,7 @@ export class pageAccueil {
   enterKey() {
     let prompt = this.alertCtrl.create({
       title: 'Clé d\'authentification',
+      cssClass : 'alertDanger-title',
       inputs: [
         {
           name: 'keyField',
@@ -59,13 +61,14 @@ export class pageAccueil {
           text: 'Annuler',
           handler: data => {
             console.log('Cancel clicked');
-          }
+          },
+
         },
         {
           text: 'Enregistrer',
           handler: data => {
             localStorage.setItem('appKey',data.keyField);
-            alert('Clé entrée avec succès !');
+            this.presentToast();
           }
         }
       ]
@@ -73,6 +76,25 @@ export class pageAccueil {
 
     prompt.present();
 
+  }
+
+  presentToast()
+  {
+    let toast = this.toastCtrl.create({
+      message : 'La clé à été entrée avec succès !',
+      position : 'bottom',
+      showCloseButton : true,
+      closeButtonText : 'Ok :)',
+      cssClass : "toast-container"
+    });
+
+    toast.present();
+  }
+
+  openBrowser()
+  {
+      let browser = new InAppBrowser('https://account.arena.net/applications', '_system' , 'location=yes');
+      browser.show();
   }
 
   logOut(){

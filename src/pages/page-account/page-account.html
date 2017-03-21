@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="primary">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -18,43 +18,40 @@
 
 <ion-content class="myBg">
 
-  <ion-list>
-    <ion-item  color="danger" class="custom-class-divider">
-      <ion-avatar item-left>
-        <img src="assets/img/icon.png">
-      </ion-avatar>
-      <h2 class="title"><b>{{AccountName}}</b></h2>
+  <ion-card class="adv-map">
+    <ion-item class="item-account" text-wrap>
+    <ion-avatar item-left>
+      <img src="assets/img/background.png">
+    </ion-avatar>
+    <h2>{{AccountName}}</h2>
     </ion-item>
 
-    <ion-item class="custom-class-divider">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Créé le :</b> {{AccountCreation}} </h2>
+    <ion-item class="item-tuto" text-wrap lines>
+      <ion-icon color="danger" large item-left icon-right name='md-clock'></ion-icon>
+      <p><b> Créé le :</b> {{AccountCreation}}</p>
     </ion-item>
-
-    <ion-item class="custom-class-divider">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Accès à : </b> {{hasExtension()}} </h2>
+    <ion-item class="item-tuto" text-wrap lines>
+      <ion-icon color="danger" large item-left icon-right name='md-add-circle'></ion-icon>
+      <p><b>Accès à : </b> {{hasExtension()}}</p>
     </ion-item>
-
-    <ion-item class="custom-class-divider">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Commandant :</b> {{isCommander()}} </h2>
+    <ion-item class="item-tuto" text-wrap lines>
+      <ion-icon color="danger" large item-left icon-right name='md-paw'></ion-icon>
+      <p><b> Commandant :</b> {{isCommander()}}</p>
     </ion-item>
-
-    <ion-item class="custom-class-divider">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Daily AP :</b> {{AccountDailyAP}} </h2>
+    <ion-item class="item-tuto" text-wrap lines>
+      <ion-icon color="danger" large item-left icon-right name='md-beer'></ion-icon>
+      <p><b> Daily AP :</b> {{AccountDailyAP}}</p>
     </ion-item>
-
-    <ion-item class="custom-class-divider">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Niveau de fractale :</b> {{AccountFractalLevel}} </h2>
+    <ion-item class="item-tuto" text-wrap lines>
+      <ion-icon color="danger" large item-left icon-right name='md-infinite'></ion-icon>
+      <p><b> Niveau de fractale :</b> {{AccountFractalLevel}}</p>
     </ion-item>
-
-    <ion-item class="custom-class-divider">
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Rang McM :</b> {{AccountWvWRank}} </h2>
+    <ion-item class="item-tuto" text-wrap lines>
+      <ion-icon color="danger" large item-left icon-right name='ios-jet-outline'></ion-icon>
+      <p><b> Rang McM :</b> {{AccountWvWRank}}</p>
     </ion-item>
-  </ion-list>
+    <ion-item actions class="footer-tuto">
+    </ion-item>
+  </ion-card>
 
 </ion-content>
