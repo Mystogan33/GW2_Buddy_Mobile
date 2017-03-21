@@ -22969,7 +22969,7 @@ page-mes-personnages .segment-md .segment-button {
 }
 
 page-mes-personnages ion-content {
-  background: url("../assets/img/ListePersonnages.jpg") no-repeat center center fixed;
+  background: url("../assets/img/classes.jpg") no-repeat center center fixed;
   -ms-background-size: cover;
   background-size: cover;
 }
@@ -22990,16 +22990,16 @@ page-page-account ion-card.adv-map {
   border-radius: 20px;
 }
 
-page-page-account ion-card.adv-map ion-item:nth-child(even) {
-  background-color: #302e2e;
+page-page-account ion-card.adv-map ion-item:nth-child(odd) {
+  background-color: #bbdefb;
 }
 
-page-page-account ion-card.adv-map ion-item:nth-child(even) h2 {
-  color: #bbdefb;
+page-page-account ion-card.adv-map ion-item:nth-child(odd) h2 {
+  color: #387ef5;
 }
 
 page-page-account ion-card.adv-map ion-item {
-  background-color: #212121;
+  background-color: white;
 }
 
 page-page-account ion-card.adv-map ion-item.item-account ion-avatar img {
@@ -23013,7 +23013,7 @@ page-page-account ion-card.adv-map ion-item.item-account ion-avatar img {
 
 page-page-account ion-card.adv-map h2 {
   font-size: 1.8em !important;
-  color: #e53935;
+  color: #387ef5;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-align: center;
@@ -23021,7 +23021,7 @@ page-page-account ion-card.adv-map h2 {
 
 page-page-account ion-card.adv-map p {
   font-size: 1.3em !important;
-  color: #bbdefb;
+  color: #387ef5;
   font-family: 'Roboto', sans-serif;
 }
 
