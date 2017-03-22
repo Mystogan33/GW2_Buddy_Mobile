@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="brown-trade">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -19,10 +19,15 @@
 
 <ion-content class="myBg">
 
-  <ion-item *ngFor="let currency of Currencies" class="custom-class-divider">
+  <ion-card class="item" *ngFor="let currency of Currencies">
+  <ion-item class="item">
     <div style="display:inline-block ; float: left" item-left><h2><b>{{currency.name}}</b></h2></div>
     <div style="display:inline ; float : right" item-right><h2><b>{{currency.amount}}</b></h2></div>
     <div style="display:inline-block ; float:right" item-right><img [src]="currency.img"></div>
   </ion-item>
+  <ion-item class="item" text-wrap>
+    <p>{{currency.description}}</p>
+  </ion-item>
+  </ion-card>
 
 </ion-content>

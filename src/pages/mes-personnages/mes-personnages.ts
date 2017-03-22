@@ -38,24 +38,24 @@ export class MesPersonnagesPage {
 
   ionViewCanEnter() {
 
-    //return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
 
-      // let loading = this.loadingCtrl.create({
-      //
-      //   spinner : 'crescent',
-      //   content: 'Chargement des personnages...'
-      //   });
+      let loading = this.loadingCtrl.create({
 
-      //loading.present();
+        spinner : 'crescent',
+        content: 'Chargement des personnages...'
+        });
+
+      loading.present();
 
       this.serv.getCharacters().subscribe(
 
         data => {
 
           this.characters = data;
-          //resolve(this.characters);
+          resolve(this.characters);
 
-        //  loading.dismiss();
+         loading.dismiss();
 
         },
 
@@ -66,7 +66,7 @@ export class MesPersonnagesPage {
         },
       );
 
-  //  });
+    });
   }
 
   ionViewDidEnter()

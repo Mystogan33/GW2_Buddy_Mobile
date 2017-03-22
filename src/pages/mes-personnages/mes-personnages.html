@@ -120,18 +120,7 @@
     <ion-item color="red-lighten-1" no-lines>
       <ion-label>Choisissez un personnage : </ion-label>
       <ion-select *ngIf="characters" #selectPersonnage [(ngModel)]="selectedCharacter" placeholder="Aucun" (ionChange)="changeCharacter()">
-        <!--<ion-option *ngFor="let character of characters" value="{{character}}">{{character}}</ion-option> -->
-        <ion-option value="Mysto The Reaper">Mysto The Reaper</ion-option>
-        <ion-option value="Personnage 2">Personnage 2</ion-option>
-        <ion-option value="Personnage 3">Personnage 3</ion-option>
-        <ion-option value="Personnage 4">Personnage 4</ion-option>
-        <ion-option value="Mysto Lol">Mysto Lol</ion-option>
-        <ion-option value="Personnage 5">Personnage 5</ion-option>
-        <ion-option value="Personnage 6">Personnage 6</ion-option>
-        <ion-option value="Personnage 7">Personnage 7</ion-option>
-        <ion-option value="Personnage 8">Personnage 8</ion-option>
-        <ion-option value="Personnage 9">Personnage 9</ion-option>
-        <ion-option value="Personnage 10">Personnage 10</ion-option>
+        <ion-option *ngFor="let character of characters" value="{{character}}">{{character}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-toolbar>

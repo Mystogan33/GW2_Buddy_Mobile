@@ -10,7 +10,7 @@ import {GW2APIProvider} from '../../providers/gw2-api-provider';
 
 export class MyWalletPage {
 
-  Currencies : Array<{name : string , amount : string , img : string}> = [];
+  Currencies : Array<{name : string , amount : string , description : string , img : string}> = [];
 
   constructor(public navCtrl: NavController , public serv : GW2APIProvider) {
 
@@ -53,7 +53,7 @@ export class MyWalletPage {
 
       data => {
 
-        this.Currencies.push({name : data.name , amount : currency.value , img : data.icon});
+        this.Currencies.push({name : data.name , amount : currency.value , description: data.description, img : data.icon});
 
       },
       err => {
