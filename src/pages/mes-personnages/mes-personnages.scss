@@ -9,9 +9,15 @@ page-mes-personnages {
 
   .segment-md .segment-button {
     color: white;
+  }
 
-    
-}
+  .segment-ios .segment-button {
+    color: white;
+  }
+
+  .toolbar-content-md {
+    padding-right: 15px;
+  }
 
   ion-content {
     background: url('../assets/img/classes.jpg') no-repeat center center fixed;

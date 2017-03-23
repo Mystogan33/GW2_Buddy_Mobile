@@ -21,9 +21,8 @@
 
   <ion-card class="item" *ngFor="let currency of Currencies">
   <ion-item class="item">
-    <div style="display:inline-block ; float: left" item-left><h2><b>{{currency.name}}</b></h2></div>
-    <div style="display:inline ; float : right" item-right><h2><b>{{currency.amount}}</b></h2></div>
-    <div style="display:inline-block ; float:right" item-right><img [src]="currency.img"></div>
+    <div class="title" item-left text-wrap><h2><b>{{currency.name}}</b></h2></div>
+    <div style="display:inherit ; float : right" item-right><h2><b>{{currency.amount}}</b></h2><img [src]="currency.img"></div>
   </ion-item>
   <ion-item class="item" text-wrap>
     <p>{{currency.description}}</p>

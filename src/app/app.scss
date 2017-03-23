@@ -51,7 +51,6 @@ ion-toolbar {
     }
   }
 
-
 }
 
 ion-content {
@@ -67,7 +66,7 @@ ion-content {
 .alert-md .alert-wrapper {
     max-width: 280px;
     border-radius: 13px;
-    background-color: color($colors,"red-lighten-1");
+    background-color: white;
     box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -144,34 +143,47 @@ ion-content {
     overflow: hidden;
     max-width: 270px;
     border-radius: 13px;
-    background-color: #212121 ;
+    background-color: white ;
     box-shadow: none;
 }
 
 .alert-ios .alert-head {
     padding: 12px 16px 7px;
     text-align: center;
-    color: color($colors,"red-lighten-1");
+    color: white;
+    background-color: color($colors,"red-lighten-1");
+}
+
+.alert-ios .alert-message:empty {
+    padding: 0px 0 0px 0;
+  }
+
+  .alert-ios .alert-radio-group, .alert-ios .alert-checkbox-group {
+    overflow: auto;
+    max-height: 240px;
+    border-top: 0.55px solid #dbdbdf;
+    -webkit-overflow-scrolling: touch;
 }
 
 .alert-ios .alert-input {
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    margin-top: 10px;
-    padding: 6px;
-    border: 0.55px solid #bbdefb;
-    border-radius: 4px;
-    color: #bbdefb;
+    border: 0.55px solid color($colors,"red-lighten-1");
+    color: color($colors,"red-lighten-1");
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background-color: #212121;
+    background-color: white;
 
     &:focus
     {
       border: 0.55px solid color($colors,"red-lighten-1");
     }
+}
+
+.alert-ios .alert-radio-label {
+    color: color($colors,"red-lighten-1");
+}
+
+.alert-ios .alert-button-group {
+    background-color: color($colors,"red-lighten-1");
 }
 
 .alert-ios .alert-button {
@@ -182,28 +194,34 @@ ion-content {
     margin: 0;
     min-width: 50%;
     height: 44px;
-    border-top: 0.55px solid color($colors,"red-lighten-1");
-    border-right: 0.55px solid color($colors,"red-lighten-1");
+    border-top: 0.55px solid white;
+    border-right: 0.55px solid white;
     border-radius: 0;
     font-size: 17px;
-    color: color($colors,"red-lighten-1");
+    color: white;
     background-color: transparent;
 }
 
  // Pop-up Windows
-.alert-wp .alert-wrapper {
+  .alert-wp .alert-wrapper {
     width: 100%;
     max-width: 520px;
-    border: 1px solid #212121;
+    border: 1px solid color($colors,"red-lighten-1");
     border-radius: 0;
-    background: #212121 ;
-}
+    background-color: white;
+  }
 
-.alert-wp .alert-title {
+  .alert-wp .alert-head {
+    padding: 20px 22px 5px 22px;
+    text-align: center;
+    background-color: color($colors,"red-lighten-1");
+  }
+
+  .alert-wp .alert-title {
     font-size: 20px;
     font-weight: 400;
-    color: color($colors,"red-lighten-1");
-}
+    color: white;
+  }
 
 .alert-wp .alert-input {
     margin: 5px 0 5px 0;
@@ -218,6 +236,18 @@ ion-content {
     {
       border: 2px solid color($colors,"red-lighten-1");
     }
+}
+
+.alert-wp .alert-button-group {
+    background-color: color($colors,"red-lighten-1");
+}
+
+.alert-wp .alert-radio-label {
+    color: color($colors,"red-lighten-1");
+}
+
+.alert-wp [aria-checked=true] .alert-radio-label {
+    color: #387ef5;
 }
 
 *::-webkit-input-placeholder {

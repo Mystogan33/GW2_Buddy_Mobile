@@ -8,6 +8,19 @@ page-page-account {
 
   }
 
+  .label-ios
+  {
+    p {
+      font-size:  1.2em !important;
+      color: color($colors,"primary");
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
+  .toolbar-content-md {
+    padding-right: 15px;
+  }
+
   ion-card.adv-map {
 
     border-radius: 20px;
@@ -49,7 +62,7 @@ page-page-account {
     }
 
     p {
-      font-size:  1.3em !important;
+      font-size:  1.3em;
       color: color($colors,"primary");
       font-family: 'Roboto', sans-serif;
     }

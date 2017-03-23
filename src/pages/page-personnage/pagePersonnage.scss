@@ -1,11 +1,13 @@
 page-pagePersonnage {
 
-  ion-navbar
-  {
-    ion-title
-    {
+  ion-navbar {
+    ion-title {
       text-align: center;
     }
+  }
+
+  .toolbar-content-md {
+    padding-right: 15px;
   }
 
 }

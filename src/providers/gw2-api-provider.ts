@@ -77,7 +77,7 @@ export class GW2APIProvider {
 
   getCurrency(currency): Observable<any>
   {
-    return this.http.get('https://api.guildwars2.com/v2/currencies/'+currency+'?access_token='+this.appKey+'&lang=en')
+    return this.http.get('https://api.guildwars2.com/v2/currencies/'+currency+'?access_token='+this.appKey+'&lang=fr')
     .map(res => res.json());
   }
 

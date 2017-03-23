@@ -12,6 +12,10 @@ page-pageAccueil {
     }
   }
 
+  .toolbar-content-md {
+    padding-right: 15px;
+  }
+
   ion-slide {
 
     background-color: #212121;
@@ -125,7 +129,7 @@ page-pageAccueil {
   }
 
   div.alert-button-group {
-    padding: 5px 5px 5px 0px;
+    padding: 5px 5px 5px 5px;
     background-color: #212121;
     color: #e53935;
     border-radius: 0px 0px 13px 13px;
@@ -133,6 +137,10 @@ page-pageAccueil {
 
   h2.alert-title {
       font-size: 22px;
+  }
+
+  div.alert-wrapper {
+    background-color: #212121;
   }
 
   button.alert-button

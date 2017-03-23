@@ -1,6 +1,12 @@
 page-my-wallet {
 
+
+  .toolbar-content-md {
+    padding-right: 15px;
+  }
+  
   ion-navbar {
+
     ion-title {
       text-align: center;
     }
@@ -8,8 +14,34 @@ page-my-wallet {
 
   .item {
 
-    background-color: color($colors,"brown-trade");
+    background-color: #8d6e63;
     border-radius: 13px;
+
+    .title
+    {
+      width: 70%;
+    }
+
+    ion-item:nth-child(odd)
+    {
+      background-color: #bcaaa4;
+    }
+
+    [item-left], [item-right] {
+        margin: 10px 0px 0px 0;
+    }
+
+    h2 {
+    margin: 2px 0;
+    padding-right: 5px;
+    font-size: 1.6rem;
+    font-weight: normal;
+      }
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
 
     p {
       color: white;
