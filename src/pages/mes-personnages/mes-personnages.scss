@@ -7,12 +7,23 @@ page-mes-personnages {
     }
   }
 
+  ion-footer {
+    ion-label {
+      color: white !important;
+    }
+  }
+
   .segment-md .segment-button {
     color: white;
   }
 
   .segment-ios .segment-button {
     color: white;
+  }
+
+  .segment-button.segment-activated
+  {
+    border-color: white !important;
   }
 
   .toolbar-content-md {

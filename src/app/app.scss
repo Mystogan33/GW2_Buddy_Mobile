@@ -242,6 +242,11 @@ ion-content {
     background-color: color($colors,"red-lighten-1");
 }
 
+.alert-wp .alert-button {
+    color: white;
+    background: transparent !important;
+}
+
 .alert-wp .alert-radio-label {
     color: color($colors,"red-lighten-1");
 }

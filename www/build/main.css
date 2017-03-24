@@ -24701,6 +24701,11 @@ ion-content {
   background-color: #ef5350;
 }
 
+.alert-wp .alert-button {
+  color: white;
+  background: transparent !important;
+}
+
 .alert-wp .alert-radio-label {
   color: #ef5350;
 }
@@ -24761,12 +24766,20 @@ page-mes-personnages ion-navbar ion-title {
   text-align: center;
 }
 
+page-mes-personnages ion-footer ion-label {
+  color: white !important;
+}
+
 page-mes-personnages .segment-md .segment-button {
   color: white;
 }
 
 page-mes-personnages .segment-ios .segment-button {
   color: white;
+}
+
+page-mes-personnages .segment-button.segment-activated {
+  border-color: white !important;
 }
 
 page-mes-personnages .toolbar-content-md {
