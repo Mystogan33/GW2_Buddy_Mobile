@@ -40,6 +40,7 @@ export class GW2APIProvider {
   getTitleInformations(title): Observable<any>
   {
     return this.http.get('https://api.guildwars2.com/v2/titles/'+title+'?access_token='+this.appKey)
+    .map(res => res.json());
 
   }
 

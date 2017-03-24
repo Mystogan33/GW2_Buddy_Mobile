@@ -18,7 +18,7 @@
     <ion-segment [(ngModel)]="selectedCategory" mode="md">
 
       <ion-segment-button value="core">
-        Infos générales
+        Infos
       </ion-segment-button>
       <ion-segment-button value="crafting">
         Métiers
@@ -40,78 +40,92 @@
 
   <div [ngSwitch]="selectedCategory" *ngIf="selectedCharacter != undefined">
 
-    <ion-card  *ngSwitchCase="'core'">
-      <ion-item class="custom-class-divider">
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Race : </b>{{CharacterRace}}</h2>
-      </ion-item>
+    <div  *ngSwitchCase="'core'">
 
-      <ion-item class="custom-class-divider">
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Genre : </b>{{CharacterGenre}}</h2>
-      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item class="custom-class-divider">
+              <h2><b>Race : </b>{{CharacterRace}}</h2>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item class="custom-class-divider">
+              <h2><b>Genre : </b>{{CharacterGenre}}</h2>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-col col-12>
+          <ion-item class="custom-class-divider">
+          <h2><b>Profession : </b>{{CharacterProfession}}</h2>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item class="custom-class-divider">
+            <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item class="custom-class-divider">
+            <h2><b>Titre : </b>{{CharacterTitle}}</h2>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item *ngFor="let guild of CharacterGuild" class="custom-class-divider" text-wrap>
+              <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item class="custom-class-divider">
+            <h2><b>Age : </b>{{CharacterAge}} jours</h2>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item class="custom-class-divider">
+            <h2>{{CharacterDeaths}} <b>morts</b></h2>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item class="custom-class-divider">
+            <h2><b>Création : </b>{{CharacterCreation}}</h2>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-      <ion-item class="custom-class-divider">
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Profession : </b>{{CharacterProfession}}</h2>
-      </ion-item>
+</div>
 
-      <ion-item class="custom-class-divider">
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
-      </ion-item>
+<ion-list *ngSwitchCase="'crafting'">
 
-      <ion-item *ngIf="CharacterTitle" class="custom-class-divider" text-wrap>
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Titre : </b>{{CharacterTitle}}</h2>
-      </ion-item>
+  <ion-card *ngFor="let job of CharacterCrafting">
 
-      <div *ngIf="CharacterGuild">
-      <button class="custom-class-divider" ion-item *ngFor="let guild of CharacterGuild" (click)="goToGuild(guild)" text-wrap>
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
-      </button>
-      </div>
-
-      <ion-item class="custom-class-divider">
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Age : </b>{{CharacterAge}} jours</h2>
-      </ion-item>
-
-      <ion-item class="custom-class-divider" text-wrap>
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Date de création : </b>{{CharacterCreation}}</h2>
-      </ion-item>
-
-      <ion-item class="custom-class-divider">
-        <ion-icon name="" large item-left></ion-icon>
-        <h2><b>Nombre de morts : </b>{{CharacterDeaths}}</h2>
-      </ion-item>
-
-    </ion-card>
-
-    <ion-list *ngSwitchCase="'crafting'">
-
-      <ion-card *ngFor="let job of CharacterCrafting">
-
-      <ion-item class="custom-class-divider" no-lines>
+    <ion-item class="custom-class-divider" no-lines>
       <ion-icon name="" large item-left></ion-icon>
       <h2><b>{{job.discipline}}</b></h2>
-      </ion-item>
+    </ion-item>
 
-      <ion-item class="custom-class-divider">
+    <ion-item class="custom-class-divider">
       <ion-icon name = "" item-left large></ion-icon>
       <h2><b>Niveau : </b>{{job.rating}}</h2>
-      </ion-item>
-      <ion-item class="custom-class-divider" no-lines>
+    </ion-item>
+    <ion-item class="custom-class-divider" no-lines>
       <ion-icon name = "" item-left large></ion-icon>
       <h2><b>Actif : </b>{{isActive(job.active)}}</h2>
-      </ion-item>
+    </ion-item>
 
-    </ion-card>
-    </ion-list>
+  </ion-card>
+</ion-list>
 
-  </div>
+</div>
 
 </ion-content>
 

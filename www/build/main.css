@@ -24782,10 +24782,6 @@ page-mes-personnages .segment-button.segment-activated {
   border-color: white !important;
 }
 
-page-mes-personnages .toolbar-content-md {
-  padding-right: 15px;
-}
-
 page-mes-personnages ion-content {
   background: url("../assets/img/classes.jpg") no-repeat center center fixed;
   -ms-background-size: cover;
