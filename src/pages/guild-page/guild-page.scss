@@ -12,4 +12,38 @@ page-guild-page {
     padding-right: 15px;
   }
 
+  .list-header-ios {
+    position: relative;
+    padding-left: 16px;
+    border-bottom: 0.55px solid #c8c7cc;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: white;
+    background: #e57373;
+  }
+
+  .list-header-md, .list-md ion-item-divider {
+    margin-left: 0;
+    padding-left: 16px;
+    border-bottom: 1px solid #dedede;
+    font-size: 1.4rem;
+    color: white;
+    background-color: #e57373;
+  }
+
+  .list-header-wp, .list-wp ion-item-divider {
+    margin-left: 0;
+    padding-left: 16px;
+    border-bottom: 1px solid transparent;
+    font-size: 2rem;
+    color: white;
+    background-color : #e57373;
+  }
+
+  .list-md {
+    margin: 0 0 25px 0;
+  }
+
 }

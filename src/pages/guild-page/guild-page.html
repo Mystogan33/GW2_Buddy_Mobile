@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="red-lighten-2">
 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -18,49 +18,77 @@
 
 
 <ion-content>
-  <ion-card>
+
+  <ion-list no-border>
+
+    <ion-list-header>
+      Description
+    </ion-list-header>
 
     <ion-item>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Tag de guilde :</b> {{guild.tag}} </h2>
+      <ion-icon name='planet' item-left></ion-icon>
+      <b>Tag de la guilde</b>
+      <ion-note item-right>
+      {{guild.tag}}
+      </ion-note>
     </ion-item>
 
     <ion-item>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Niveau de la guilde :</b> {{guild.level}} </h2>
+      <ion-label>
+        <b>Niveau de la guilde</b>
+      </ion-label>
+      <ion-note item-right>
+      {{guild.level}}
+      </ion-note>
+      <ion-icon name='body' item-left></ion-icon>
     </ion-item>
 
+  </ion-list>
+
+
+  <ion-list>
+
+    <ion-list-header>
+      Message de guilde
+    </ion-list-header>
 
     <ion-item text-wrap>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Message de guilde :</b></h2>
-      <ion-card-content>
-        <p>
-         {{guild.motd}}
-       </p>
-      </ion-card-content>
+      {{guild.motd}}
+      <ion-icon name='color-wand' item-left></ion-icon>
     </ion-item>
 
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
+      Monnaies de la guilde
+    </ion-list-header>
 
     <ion-item>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Influence :</b> {{guild.influence}} </h2>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Aetherium :</b> {{guild.aetherium}} </h2>
+      <ion-icon name='flash' item-left></ion-icon>
+      Influence
+      <ion-note item-right>{{guild.influence}}</ion-note>
     </ion-item>
 
     <ion-item>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Resonance :</b> {{guild.resonance}} </h2>
+      <ion-icon name='book' item-left></ion-icon>
+      Aetherium
+      <ion-note item-right>{{guild.aetherium}}</ion-note>
     </ion-item>
 
     <ion-item>
-      <ion-icon name = "" item-left large></ion-icon>
-      <h2> <b> Faveur :</b> {{guild.favor}} </h2>
+      <ion-icon name='beer' item-left></ion-icon>
+      Resonance
+      <ion-note item-right>{{guild.resonance}}</ion-note>
     </ion-item>
 
-  </ion-card>
+    <ion-item>
+      <ion-icon name='beer' item-left></ion-icon>
+      Faveur
+      <ion-note item-right>{{guild.favor}}</ion-note>
+    </ion-item>
+
+
+  </ion-list>
 </ion-content>
