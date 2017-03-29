@@ -5,7 +5,7 @@ See http://ionicframework.com/docs/v2/components/#navigation for more info on
 Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="finishers">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -36,18 +36,18 @@ Ionic pages and navigation.
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="finishers">
     <ion-searchbar
-      mode="ios" color="secondary" (ionInput)="getItems($event)">
+      mode="ios" color="finishers" (ionInput)="getItems($event)">
     </ion-searchbar>
     <ion-icon name="ios-arrow-up" item-right *ngIf="!isOpenChoice" (click)="displayCheckBox()"></ion-icon>
     <ion-icon name="ios-arrow-down" item-right *ngIf="isOpenChoice" (click)="displayCheckBox()"></ion-icon>
 
-    <ion-item color="secondary" *ngIf="isOpenChoice">
+    <ion-item color="finishers" *ngIf="isOpenChoice">
       <ion-label>Non Permanent</ion-label>
       <ion-checkbox disabled="false"></ion-checkbox>
     </ion-item>
-    <ion-item color="secondary" *ngIf="isOpenChoice">
+    <ion-item color="finishers" *ngIf="isOpenChoice">
       <ion-label>Permanent</ion-label>
       <ion-checkbox disabled="false"></ion-checkbox>
     </ion-item>
