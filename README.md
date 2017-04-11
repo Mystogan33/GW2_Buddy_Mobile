@@ -14,5 +14,5 @@ $ npm install -g ionic@beta
 Then run:
 
 ```bash
-$ ionic start myApp
+$ ionic serve --lab
 ```
