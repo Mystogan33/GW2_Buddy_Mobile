@@ -27,7 +27,7 @@ Ionic pages and navigation.
 
   <ion-grid>
     <ion-row wrap>
-      <ion-col width-33 *ngFor="let licorne of infoFinishTab">
+      <ion-col col-3 *ngFor="let licorne of infoFinishTab">
           <img [src]="licorne.icon" (click)="openMenu(licorne)"/>
       </ion-col>
     </ion-row>
@@ -45,11 +45,11 @@ Ionic pages and navigation.
 
     <ion-item color="finishers" *ngIf="isOpenChoice">
       <ion-label>Non Permanent</ion-label>
-      <ion-checkbox disabled="false"></ion-checkbox>
+      <ion-toggle></ion-toggle>
     </ion-item>
     <ion-item color="finishers" *ngIf="isOpenChoice">
       <ion-label>Permanent</ion-label>
-      <ion-checkbox disabled="false"></ion-checkbox>
+      <ion-toggle></ion-toggle>
     </ion-item>
 
   </ion-toolbar>

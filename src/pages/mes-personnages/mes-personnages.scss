@@ -55,11 +55,49 @@ page-mes-personnages {
 
     ion-item {
       background-color: transparent !important;
-      color: #f9fbe7;
+      color: #ef5350;
 
       h2
       {
-        color: #f9fbe7;
+        color : #ef5350;
+      }
+    }
+  }
+
+  .crafting
+  {
+    background: url('../assets/img/crafting.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+    .label-md {
+    margin: 0;
+    }
+
+    .label-ios
+    {
+      margin: 0px;
+    }
+
+    .label-wp
+    {
+      margin: 0px;
+    }
+
+    img
+    {
+      width:auto;
+    }
+
+    ion-item {
+      background-color: transparent !important;
+      color: #ef5350;
+
+      h2
+      {
+        color : #ef5350;
       }
     }
   }

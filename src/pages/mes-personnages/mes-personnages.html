@@ -117,7 +117,7 @@
             </ion-col>
             <ion-col col-3>
               <ion-item class="race">
-                 <h2><b>Niveau</b> {{CharacterLevel}}</h2>
+                 <h2>{{CharacterLevel}}</h2>
               </ion-item>
             </ion-col>
             <ion-col col-3>
@@ -166,10 +166,9 @@
 
 <ion-list *ngSwitchCase="'crafting'">
 
-  <ion-card *ngFor="let job of CharacterCrafting">
+  <ion-card class="crafting" *ngFor="let job of CharacterCrafting">
 
     <ion-item class="custom-class-divider" no-lines>
-      <ion-icon name="" large item-left></ion-icon>
       <h2><b>{{job.discipline}}</b></h2>
     </ion-item>
 

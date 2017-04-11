@@ -1,5 +1,16 @@
 page-minis {
 
+  ion-content {
+
+    // background: url('../assets/img/minis.jpg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -ms-background-size: cover;
+    // background-size: cover;
+    // opacity: 0.85;
+
+  }
+
   ion-navbar {
     ion-title {
       text-align: center;
@@ -8,6 +19,18 @@ page-minis {
 
   .toolbar-content-md {
     padding-right: 15px;
+  }
+
+  .minipets {
+    background: url('../assets/img/pets2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+  }
+
+  h2 {
+    color : white;
   }
 
 }

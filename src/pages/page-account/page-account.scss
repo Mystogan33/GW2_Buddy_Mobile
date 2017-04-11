@@ -8,14 +8,15 @@ page-page-account {
 
   }
 
-  .label-ios
-  {
-    p {
-      font-size:  1.2em !important;
-      color: color($colors,"primary");
-      font-family: 'Roboto', sans-serif;
-    }
-  }
+  .item-ios {
+    position: relative;
+    padding-left: 16px;
+    border-radius: 0;
+    font-size: 1.5rem;
+    color: #000;
+    background-color: #fff;
+    transition: background-color 200ms linear;
+}
 
   .toolbar-content-md {
     padding-right: 15px;
@@ -62,7 +63,7 @@ page-page-account {
     }
 
     p {
-      font-size:  1.3em;
+      font-size:  1.2em !important;
       color: color($colors,"primary");
       font-family: 'Roboto', sans-serif;
     }

@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="danger">
+  <ion-navbar color="minis">
         <ion-buttons left>
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
@@ -21,8 +21,7 @@
 
 <ion-content class="myBg">
 
-<ion-grid>
-    <ion-item *ngFor="let castor of infoMiniTab" class="item-content" text-wrap no-lines>
+    <ion-item class="minipets" *ngFor="let castor of infoMiniTab" no-lines text-wrap>
 
       <ion-thumbnail item-left>
         <img [src]="castor.icon"/>
@@ -30,12 +29,11 @@
       <h2><b>{{castor.name}}</b></h2>
 
   </ion-item>
-</ion-grid>
 
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="danger">
+  <ion-toolbar color="minis">
     <ion-searchbar mode="ios" color="danger" (ionInput)="getItems($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-footer>
