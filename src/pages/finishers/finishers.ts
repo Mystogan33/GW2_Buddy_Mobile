@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Platform, AlertController , ToastController } from 'ionic-angular';
-import {GW2APIProvider} from '../../providers/gw2-api-provider';
+import { GW2APIProvider } from '../../providers/gw2-api/gw2-api';
 
 
 
 @Component({
   selector: 'page-finishers',
   templateUrl: 'finishers.html',
-  providers: [GW2APIProvider]
-
+  providers:[GW2APIProvider]
 })
 export class FinishersPage {
 
@@ -76,6 +75,7 @@ getFinishersInformation(idFinishers)
       let prompt = this.alertCtrl.create({
       title: finisherDesc.name,
       message: finisherDesc.unlock_details,
+      cssClass : 'alert-message',
       buttons: [
         {
           text: 'Compris',

@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform , LoadingController , PopoverController } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { Nav, Platform , LoadingController , ToastController , PopoverController } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { pageAccueil } from '../pages/page-accueil/pageAccueil';
 import { AccountPage } from '../pages/page-account/page-account';
 import {MesPersonnagesPage} from '../pages/mes-personnages/mes-personnages';
@@ -9,11 +10,9 @@ import {FinishersPage} from '../pages/finishers/finishers';
 import {MyWalletPage} from '../pages/my-wallet/my-wallet';
 import {MinisPage} from '../pages/minis/minis';
 import {PopOverPage} from '../pages/pop-over/pop-over';
-import {GW2APIProvider} from '../providers/gw2-api-provider';
 
 @Component({
-  templateUrl: 'app.html',
-  providers: [GW2APIProvider]
+  templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -21,9 +20,8 @@ export class MyApp {
   rootPage: any = pageAccueil;
   params : Array<{name: string , tag : string , id : string}> = [];
   pages: Array<{title: string, component: any}>;
-  AccountGuilds : Array<{title : string , icon : string , params : {data : any}}> = [];
 
-  constructor(public platform: Platform , public loadingCtrl : LoadingController , public popoverCtrl : PopoverController , public serv : GW2APIProvider) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen , public loadingCtrl : LoadingController , public toastCtrl : ToastController , public popoverCtrl : PopoverController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -43,15 +41,33 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 
-  openPage(page) {
+  presentToast()
+  {
+    let toast = this.toastCtrl.create({
+      message : 'Tu dois tout d\'abord entrer ta clé d\'application pour accéder aux fonctionnalités de l\'application.'+
+      'Si tu ne sais pas comment faire , suis le tutoriel sur la page d\'accueil :D',
+      position : 'bottom',
+      showCloseButton : true,
+      closeButtonText : 'Ok :)',
+      cssClass : "toast-container"
+    });
 
-      this.nav.setRoot(page.component)
-
-    }
-
+    toast.present();
   }
+
+  openPage(page) {
+    if(localStorage.getItem('appKey') == null)
+    {
+      this.presentToast();
+    }
+    else
+    {
+      this.nav.setRoot(page.component);
+    }
+  }
+}

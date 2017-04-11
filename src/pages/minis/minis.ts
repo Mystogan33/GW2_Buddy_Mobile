@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController,  NavParams } from 'ionic-angular';
-import {GW2APIProvider} from '../../providers/gw2-api-provider';
-/*
-  Generated class for the Minis page.
+import { GW2APIProvider } from '../../providers/gw2-api/gw2-api';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-minis',
   templateUrl: 'minis.html',
-  providers: [GW2APIProvider]
+  providers:[GW2APIProvider]
 })
 export class MinisPage {
 
@@ -21,7 +16,7 @@ export class MinisPage {
   items: any[];
 
 
-  constructor(public navCtrl: NavController,public serv: GW2APIProvider,
+  constructor(public navCtrl: NavController, public serv: GW2APIProvider,
   public navParams: NavParams) {
     this.getMinis();
   }

@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 export declare class ParserError {
     input: string;
     errLocation: string;
@@ -161,11 +168,12 @@ export declare class ASTWithSource extends AST {
     toString(): string;
 }
 export declare class TemplateBinding {
+    span: ParseSpan;
     key: string;
     keyIsVar: boolean;
     name: string;
     expression: ASTWithSource;
-    constructor(key: string, keyIsVar: boolean, name: string, expression: ASTWithSource);
+    constructor(span: ParseSpan, key: string, keyIsVar: boolean, name: string, expression: ASTWithSource);
 }
 export interface AstVisitor {
     visitBinary(ast: Binary, context: any): any;

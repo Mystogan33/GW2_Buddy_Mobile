@@ -3,13 +3,13 @@ import { NavController ,  NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-guild-page',
-  templateUrl: 'guild-page.html',
+  templateUrl: 'guild-page.html'
 })
 export class GuildPage {
 
-  guild : string;
+  guild : any;
 
-  constructor(public navCtrl: NavController , public navParams : NavParams) {
+  constructor(public navCtrl: NavController , private navParams : NavParams) {
 
     this.guild = this.navParams.get('guild');
 

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { GW2APIProvider } from '../../providers/gw2-api-provider'
+import { GW2APIProvider } from '../../providers/gw2-api/gw2-api'
 import { NavController , AlertController , ToastController } from 'ionic-angular';
-import { Vibration } from 'ionic-native';
-import { InAppBrowser } from 'ionic-native';
+import { Vibration } from '@ionic-native/vibration';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-pageAccueil',
   templateUrl: 'pageAccueil.html',
-  providers : [GW2APIProvider]
+  providers: [GW2APIProvider]
 })
 export class pageAccueil {
 
@@ -15,7 +15,7 @@ export class pageAccueil {
 
   slides : Array<any>
 
-  constructor(public navCtrl: NavController , public alertCtrl : AlertController ,public service : GW2APIProvider , public toastCtrl : ToastController) {
+  constructor(public navCtrl: NavController , public alertCtrl : AlertController , public service : GW2APIProvider , public toastCtrl : ToastController , private iab: InAppBrowser) {
 
     this.slides = [
       {
@@ -81,7 +81,7 @@ export class pageAccueil {
   presentToast()
   {
     let toast = this.toastCtrl.create({
-      message : 'La clé à été entrée avec succès !',
+      message : 'La clé à été entrée avec succès ! Tu peux désormais accéder aux fonctionnalités de l\'application.',
       position : 'bottom',
       showCloseButton : true,
       closeButtonText : 'Ok :)',
@@ -93,8 +93,26 @@ export class pageAccueil {
 
   openBrowser()
   {
-      let browser = new InAppBrowser('https://account.arena.net/applications', '_system' , 'location=yes');
+      let browser = this.iab.create('https://account.arena.net/applications', '_system' , 'location=yes');
       browser.show();
+  }
+
+  goToTwitter()
+  {
+    let browser = this.iab.create('https://twitter.com/guildwars2', '_system' , 'location=yes');
+    browser.show();
+  }
+
+  goToFacebook()
+  {
+    let browser = this.iab.create('https://www.facebook.com/GuildWars2/', '_system' , 'location=yes');
+    browser.show();
+  }
+
+  goToYoutube()
+  {
+    let browser = this.iab.create('https://www.youtube.com/user/arenanetofficial', '_system' , 'location=yes');
+    browser.show();
   }
 
   logOut(){

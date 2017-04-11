@@ -22,8 +22,6 @@
 
     <ion-slides>
       <ion-slide class="presentation">
-        <ion-toolbar>
-        </ion-toolbar>
         <div class="text-presentation">
           <h2>Qu'est-ce que GW2 ? </h2>
           <p>
@@ -48,8 +46,7 @@
         </ion-slide>
 
         <ion-slide class="presentation">
-          <ion-toolbar>
-          </ion-toolbar>
+
           <div class="text-presentation">
             <h2>Mais à quoi sert cette application ?</h2>
             <p>
@@ -70,8 +67,6 @@
           </ion-slide>
 
           <ion-slide>
-            <ion-toolbar>
-            </ion-toolbar>
 
             <ion-card class="adv-map">
               <div style="position: relative">
@@ -188,9 +183,9 @@
         <ion-fab bottom right>
           <button ion-fab color="danger"><ion-icon name="settings"></ion-icon></button>
           <ion-fab-list side="top">
-            <button ion-fab color="primary"><ion-icon name="logo-twitter"></ion-icon></button>
-            <button ion-fab color="primary"><ion-icon name="logo-facebook"></ion-icon></button>
-            <button ion-fab color="danger"><ion-icon name="logo-youtube"></ion-icon></button>
+            <button ion-fab color="primary" (click)="goToTwitter()"><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab color="primary" (click)="goToFacebook()"><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab color="danger" (click)="goToYoutube()"><ion-icon name="logo-youtube"></ion-icon></button>
           </ion-fab-list>
           <ion-fab-list side="left">
             <button ion-fab color="danger" (click)="enterKey()"><ion-icon name="key"></ion-icon></button>

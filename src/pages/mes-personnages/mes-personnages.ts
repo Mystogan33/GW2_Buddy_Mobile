@@ -1,6 +1,6 @@
 import { Component , ViewChild} from '@angular/core';
 import { NavController , LoadingController , Select } from 'ionic-angular';
-import {GW2APIProvider} from '../../providers/gw2-api-provider';
+import { GW2APIProvider } from '../../providers/gw2-api/gw2-api';
 import {PagePersonnagePage} from '../page-personnage/pagePersonnage';
 import {GuildPage} from '../guild-page/guild-page';
 
@@ -19,8 +19,9 @@ export class MesPersonnagesPage {
 
  CharacterName : any;
  CharacterRace : any;
- CharacterGenre : any;
+ CharacterGenre : string;
  CharacterProfession : any;
+ CharacterProfessionIcon : any;
  CharacterLevel : any;
  CharacterGuild : Array<{name : string , tag : string , id : string}> = [];
  CharacterAge : any;
@@ -101,11 +102,14 @@ export class MesPersonnagesPage {
         this.CharacterName = data.name;
         this.CharacterRace = data.race;
         this.CharacterGenre = data.gender;
+        this.CharacterGenre = this.CharacterGenre.toLowerCase();
         this.CharacterProfession = data.profession;
+        this.getIconProfession(data.profession);
         this.CharacterLevel = data.level;
         this.getGuildName(data.guild);
         this.getTitleInformations(data.title);
-        this.CharacterAge = data.age;
+        this.CharacterAge = data.age / 86400;
+        this.CharacterAge = parseFloat(this.CharacterAge).toFixed(2);
         this.CharacterCreation = this.convertDate(data.created);
         this.CharacterDeaths = data.deaths;
 
@@ -174,6 +178,29 @@ export class MesPersonnagesPage {
 
             this.CharacterGuild = [];
             this.CharacterGuild.push({name : data.name , tag: data.tag , id : data.id});
+
+          },
+
+          err => {
+
+            alert(err);
+
+          },
+        );
+      }
+
+    }
+
+    getIconProfession(profession)
+    {
+      if(profession != undefined)
+      {
+        this.serv.getIconProfession(profession).subscribe(
+
+          data => {
+
+            this.CharacterProfessionIcon = data.icon_big;
+            console.log(this.CharacterProfessionIcon);
 
           },
 

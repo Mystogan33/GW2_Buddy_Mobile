@@ -1,7 +1,7 @@
 import { Component , ViewChild } from '@angular/core';
-import { NavController , LoadingController ,  NavParams, Tabs } from 'ionic-angular';
+import { NavController , LoadingController ,  NavParams, Tabs , Slides } from 'ionic-angular';
 import {GuildPage} from '../guild-page/guild-page';
-import {GW2APIProvider} from '../../providers/gw2-api-provider';
+import {GW2APIProvider } from '../../providers/gw2-api/gw2-api';
 import {Http} from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/catch';
@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'page-mes-guildes',
   templateUrl: 'mes-guildes.html',
+  providers:[GW2APIProvider]
 })
 export class MesGuildesPage {
 

@@ -42,65 +42,125 @@
 
     <div  *ngSwitchCase="'core'">
 
-      <ion-grid>
-        <ion-row>
-          <ion-col col-6>
-            <ion-item class="custom-class-divider">
-              <h2><b>Race : </b>{{CharacterRace}}</h2>
+      <!-- <ion-card class="character">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <ion-item class="race">
+                 <img src="assets/img/{{CharacterRace}}.png">
+              </ion-item>
+            </ion-col>
+            <ion-col col-4>
+              <ion-item class="custom-class-divider">
+              <h2>{{CharacterProfession}}</h2>
             </ion-item>
-          </ion-col>
-          <ion-col col-6>
-            <ion-item class="custom-class-divider">
-              <h2><b>Genre : </b>{{CharacterGenre}}</h2>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-        <ion-col col-12>
-          <ion-item class="custom-class-divider">
-          <h2><b>Profession : </b>{{CharacterProfession}}</h2>
-        </ion-item>
-        </ion-col>
-      </ion-row>
-        <ion-row>
-          <ion-col col-6>
-            <ion-item class="custom-class-divider">
-            <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
-            </ion-item>
-          </ion-col>
-          <ion-col col-6>
-            <ion-item class="custom-class-divider">
-            <h2><b>Titre : </b>{{CharacterTitle}}</h2>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-12>
-            <ion-item *ngFor="let guild of CharacterGuild" class="custom-class-divider" text-wrap>
-              <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6>
-            <ion-item class="custom-class-divider">
-            <h2><b>Age : </b>{{CharacterAge}} jours</h2>
-            </ion-item>
-          </ion-col>
-          <ion-col col-6>
-            <ion-item class="custom-class-divider">
-            <h2>{{CharacterDeaths}} <b>morts</b></h2>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-12>
-            <ion-item class="custom-class-divider">
-            <h2><b>Création : </b>{{CharacterCreation}}</h2>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+            </ion-col>
+            <ion-col col-4>
+              <ion-item>
+                <ion-icon name="md-{{CharacterGenre}}" item-right></ion-icon>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item class="custom-class-divider" text-wrap>
+              <h2><b>Titre : </b>{{CharacterTitle}}</h2>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item class="item-right">
+              <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item *ngFor="let guild of CharacterGuild" class="custom-class-divider" text-wrap>
+                <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item class="custom-class-divider">
+              <h2><b>Age : </b>{{CharacterAge}} jours</h2>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item class="custom-class-divider">
+              <h2>{{CharacterDeaths}} <b>morts</b></h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item class="custom-class-divider">
+              <h2><b>Création : </b>{{CharacterCreation}}</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card> -->
+
+      <ion-card class="character">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <ion-item class="race">
+                 <img src="assets/img/{{CharacterRace}}.png">
+              </ion-item>
+            </ion-col>
+            <ion-col col-3>
+              <ion-item class="race">
+                 <img src="{{CharacterProfessionIcon}}">
+              </ion-item>
+            </ion-col>
+            <ion-col col-3>
+              <ion-item class="race">
+                 <h2><b>Niveau</b> {{CharacterLevel}}</h2>
+              </ion-item>
+            </ion-col>
+            <ion-col col-3>
+              <ion-item class="race">
+                 <ion-icon name="md-{{CharacterGenre}}" item-right></ion-icon>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item class="custom-class-divider">
+              <h2>Titre : {{CharacterTitle}}</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item *ngFor="let guild of CharacterGuild" class="custom-class-divider" text-wrap>
+                <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item class="custom-class-divider">
+              <h2><b>Age : </b>{{CharacterAge}} jours</h2>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item class="custom-class-divider">
+              <h2>{{CharacterDeaths}} <b>morts</b></h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-item class="custom-class-divider">
+              <h2><b>Temps de jeu : </b>{{CharacterCreation}}</h2>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
 
 </div>
 

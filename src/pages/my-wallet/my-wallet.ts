@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {GW2APIProvider} from '../../providers/gw2-api-provider';
+import { GW2APIProvider } from '../../providers/gw2-api/gw2-api';
 
 @Component({
   selector: 'page-my-wallet',

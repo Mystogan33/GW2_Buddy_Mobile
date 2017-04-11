@@ -26,7 +26,42 @@ page-mes-personnages {
     border-color: white !important;
   }
 
-  .toolbar-content-md {
+  .character
+  {
+    background: url('../assets/img/personnage.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+    .label-md {
+    margin: 0;
+    }
+
+    .label-ios
+    {
+      margin: 0px;
+    }
+
+    .label-wp
+    {
+      margin: 0px;
+    }
+
+    img
+    {
+      width:auto;
+    }
+
+    ion-item {
+      background-color: transparent !important;
+      color: #f9fbe7;
+
+      h2
+      {
+        color: #f9fbe7;
+      }
+    }
   }
 
   ion-content {
