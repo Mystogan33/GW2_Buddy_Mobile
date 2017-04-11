@@ -1,14 +1,14 @@
-Ionic 2 App Base
+GW2 Buddy Mobile v3
 =====================
 
-This is the base template for Ionic 2 starter apps.
+GW2 Buddy , l'application qui vous permet d'enmener la Tyrie partout avec vous ! :)
 
 ## Using this project
 
-You'll need the Ionic CLI with support for v2 apps:
+You'll need the Ionic CLI with support for v2 with Angular 4 compatibilty apps to use this application:
 
 ```bash
-$ npm install -g ionic
+$ npm install -g ionic@beta
 ```
 
 Then run:
@@ -16,5 +16,3 @@ Then run:
 ```bash
 $ ionic start myApp
 ```
-
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
