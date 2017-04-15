@@ -43,8 +43,7 @@ export class GW2APIProvider {
     .map(res => res.json());
   }
 
-  getTitleInformations(title): Observable<any>
-  {
+  getTitleInformations(title): Observable<any> {
     return this.http.get('https://api.guildwars2.com/v2/titles/'+title+'?access_token='+this.appKey)
     .map(res => res.json());
 
@@ -63,40 +62,46 @@ export class GW2APIProvider {
   }
 
   // Finishers
-  getMyFinishers() : Observable<any>
-  {
-    return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey)
+  getMyFinishers() : Observable<any> {
+    return this.http.get('https://api.guildwars2.com/v2/account/finishers?access_token='+this.appKey+'&lang=fr')
     .map(res => res.json());
   }
 
   getFinishersInformation(idFinishers): Observable<any> {
 
-    return this.http.get('https://api.guildwars2.com/v2/finishers/'+idFinishers+'?access_token='+this.appKey)
+    return this.http.get('https://api.guildwars2.com/v2/finishers/'+idFinishers+'?access_token='+this.appKey+'&lang=fr')
     .map(res => res.json());
   }
 
   // Portefeuille
-  getMyWallet(): Observable<any>
-  {
+  getMyWallet(): Observable<any> {
     return this.http.get('https://api.guildwars2.com/v2/account/wallet?access_token='+this.appKey)
     .map(res => res.json());
   }
 
-  getCurrency(currency): Observable<any>
-  {
+  getCurrency(currency): Observable<any> {
     return this.http.get('https://api.guildwars2.com/v2/currencies/'+currency+'?access_token='+this.appKey+'&lang=fr')
     .map(res => res.json());
   }
 
   // Minis
-  getMyMinis() : Observable<any>
-  {
+  getMyMinis() : Observable<any> {
     return this.http.get('https://api.guildwars2.com/v2/account/minis?access_token='+this.appKey)
     .map(res => res.json());
   }
 
   getMinisInformation(idMinis): Observable<any> {
     return this.http.get('https://api.guildwars2.com/v2/minis/'+idMinis+'?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
+  getInventory(character) {
+    return this.http.get('https://api.guildwars2.com/v2/characters/'+character+'/inventory?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
+  getItemInformations(idItem): Observable<any> {
+    return this.http.get('https://api.guildwars2.com/v2/items/'+idItem)
     .map(res => res.json());
   }
 

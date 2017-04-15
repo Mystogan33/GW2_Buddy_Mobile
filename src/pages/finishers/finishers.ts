@@ -48,7 +48,7 @@ getFinishers(){
      for(var i = 0; i < this.finisherTab.length; i++)
       {
         this.getFinishersInformation(this.finisherTab[i]);
-        }
+      }
 
     },
     err => {

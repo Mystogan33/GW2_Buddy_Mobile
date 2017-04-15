@@ -1,8 +1,9 @@
 import { Component , ViewChild} from '@angular/core';
-import { NavController , LoadingController , Select } from 'ionic-angular';
+import { NavController , LoadingController , Select , PopoverController } from 'ionic-angular';
 import { GW2APIProvider } from '../../providers/gw2-api/gw2-api';
 import {PagePersonnagePage} from '../page-personnage/pagePersonnage';
 import {GuildPage} from '../guild-page/guild-page';
+import {PopOverItemPage} from '../pop-over-item/pop-over-item';
 
 @Component({
   selector: 'page-mes-personnages',
@@ -11,29 +12,31 @@ import {GuildPage} from '../guild-page/guild-page';
 })
 export class MesPersonnagesPage {
 
- selectedCharacter : any = undefined;
- selectedCategory : any;
- characters: Array<{nom: string}> = [];
+  selectedCharacter : any = undefined;
+  selectedCategory : any;
+  characters: Array<{nom: string}> = [];
 
- @ViewChild('selectPersonnage') selectPersonnage: Select;
+  @ViewChild('selectPersonnage') selectPersonnage: Select;
 
- CharacterName : any;
- CharacterRace : any;
- CharacterGenre : string;
- CharacterProfession : any;
- CharacterProfessionIcon : any;
- CharacterLevel : any;
- CharacterGuild : Array<{name : string , tag : string , id : string}> = [];
- CharacterAge : any;
- CharacterCreation : any;
- CharacterDeaths : any;
- CharacterTitle : any;
+  CharacterName : any;
+  CharacterRace : any;
+  CharacterGenre : string;
+  CharacterProfession : any;
+  CharacterProfessionIcon : any;
+  CharacterLevel : any;
+  CharacterGuild : Array<{name : string , tag : string , id : string}> = [];
+  CharacterAge : any;
+  CharacterCreation : any;
+  CharacterDeaths : any;
+  CharacterTitle : any;
 
- CharacterCrafting : Array<{discipline : string , rating : string , active : string}> = [];
+  CharacterCrafting : Array<{discipline : string , rating : string , active : string}> = [];
 
- CharacterEquipment : Array<any> = [];
+  CharacterEquipment : Array<any> = [];
 
-  constructor(public navCtrl: NavController , public serv : GW2APIProvider , public loadingCtrl : LoadingController) {
+  CharacterInventory : Array<{BagsDetails : any , content : any}> = [];
+
+  constructor(public navCtrl: NavController , public serv : GW2APIProvider , public loadingCtrl : LoadingController , public popOverCtrl : PopoverController) {
 
   }
 
@@ -45,7 +48,7 @@ export class MesPersonnagesPage {
 
         spinner : 'crescent',
         content: 'Chargement des personnages...'
-        });
+      });
 
       loading.present();
 
@@ -56,7 +59,7 @@ export class MesPersonnagesPage {
           this.characters = data;
           resolve(this.characters);
 
-         loading.dismiss();
+          loading.dismiss();
 
         },
 
@@ -70,29 +73,25 @@ export class MesPersonnagesPage {
     });
   }
 
-  ionViewDidEnter()
-  {
+  ionViewDidEnter() {
     this.selectPersonnage.open();
   }
 
-  changeCharacter()
-  {
+  changeCharacter() {
     this.getCharacterInformations();
   }
 
-  logOut()
-  {
+  logOut() {
     localStorage.removeItem('appKey');
   }
 
-  getCharacterInformations()
-  {
+  getCharacterInformations() {
 
     let loading = this.loadingCtrl.create({
 
       spinner : 'crescent',
       content: 'Chargement du personnage...'
-      });
+    });
 
     this.serv.getCharacterInformations(this.selectedCharacter).subscribe(
 
@@ -161,62 +160,109 @@ export class MesPersonnagesPage {
     }
   }
 
-    convertDate(date)
-    {
-      let TDateSplit = date.split("T");
-      let ZDateSplit = TDateSplit[1].split("Z");
-      return TDateSplit[0]+" "+ZDateSplit[0];
+  convertDate(date) {
+    let TDateSplit = date.split("T");
+    let ZDateSplit = TDateSplit[1].split("Z");
+    return TDateSplit[0]+" "+ZDateSplit[0];
+  }
+
+  getGuildName(guild) {
+
+    if(guild != undefined) {
+      this.serv.getGuildInformations(guild).subscribe(
+
+        data => {
+
+          this.CharacterGuild = [];
+          this.CharacterGuild.push({name : data.name , tag: data.tag , id : data.id});
+
+        },
+
+        err => {
+
+          alert(err);
+
+        },
+      );
     }
 
-    getGuildName(guild)
+  }
+
+  getIconProfession(profession) {
+    if(profession != undefined)
     {
-      if(guild != undefined)
-      {
-        this.serv.getGuildInformations(guild).subscribe(
+      this.serv.getIconProfession(profession).subscribe(
 
-          data => {
+        data => {
 
-            this.CharacterGuild = [];
-            this.CharacterGuild.push({name : data.name , tag: data.tag , id : data.id});
+          this.CharacterProfessionIcon = data.icon_big;
+          console.log(this.CharacterProfessionIcon);
 
-          },
+        },
 
-          err => {
+        err => {
 
-            alert(err);
+          alert(err);
 
-          },
-        );
-      }
-
+        },
+      );
     }
 
-    getIconProfession(profession)
-    {
-      if(profession != undefined)
-      {
-        this.serv.getIconProfession(profession).subscribe(
+  }
 
-          data => {
+  getInventory()
+  {
+    this.serv.getInventory(this.selectedCharacter).subscribe(
 
-            this.CharacterProfessionIcon = data.icon_big;
-            console.log(this.CharacterProfessionIcon);
+      data => {
 
-          },
+        let bags = data.bags;
 
-          err => {
+        this.CharacterInventory = [];
 
-            alert(err);
+        for(var i = 0 ; i < bags.length ; i++)
+        {
+          let inventory = bags[i].inventory;
+          let BagsInventory : any = [];
 
-          },
-        );
-      }
+          this.serv.getItemInformations(bags[i].id).subscribe(
+            data => {
 
+              for(var j = 0 ; j < inventory.length ; j++)
+              {
+                let item = inventory[j];
+
+                if(item != null)
+                {
+                  let count = item.count;
+
+                  this.serv.getItemInformations(item.id).subscribe(data => {
+                    BagsInventory.push({count : count , itemDetails : data });
+                  });
+
+                }
+                else
+                {
+                  console.log("Vide");
+                  BagsInventory.push({count : null});
+                }
+              }
+
+              this.CharacterInventory.push({BagsDetails : data , content : BagsInventory});
+            });
+
+          }
+        },
+        err => {
+          alert(err);
+        }
+      );
     }
 
-    goToGuild(guild)
+    openItemDescription(item , event)
     {
-      this.navCtrl.push(GuildPage , {idGuild : guild});
+      let popover = this.popOverCtrl.create(PopOverItemPage , {item : item});
+      popover.present({ev: event});
     }
 
-}
+  }

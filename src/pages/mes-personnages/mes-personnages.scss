@@ -26,6 +26,11 @@ page-mes-personnages {
     border-color: white !important;
   }
 
+  .img-round
+  {
+    border-radius: 10px;
+  }
+  
   .character
   {
     background: url('../assets/img/personnage.jpg') no-repeat center center fixed;
@@ -50,7 +55,8 @@ page-mes-personnages {
 
     img
     {
-      width:auto;
+      height: 30px;
+      width: 30px;
     }
 
     ion-item {
@@ -61,6 +67,7 @@ page-mes-personnages {
       {
         color : #ef5350;
       }
+
     }
   }
 

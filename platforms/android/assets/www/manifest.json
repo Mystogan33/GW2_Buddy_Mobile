@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "GW2_Buddy_Mobile_v3",
+  "short_name": "GW2_Buddy",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

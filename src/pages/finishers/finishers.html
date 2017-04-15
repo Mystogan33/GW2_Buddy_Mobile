@@ -37,20 +37,7 @@ Ionic pages and navigation.
 
 <ion-footer>
   <ion-toolbar color="finishers">
-    <ion-searchbar
-      mode="ios" color="finishers" (ionInput)="getItems($event)">
+    <ion-searchbar mode="ios" color="finishers" (ionInput)="getItems($event)">
     </ion-searchbar>
-    <ion-icon name="ios-arrow-up" item-right *ngIf="!isOpenChoice" (click)="displayCheckBox()"></ion-icon>
-    <ion-icon name="ios-arrow-down" item-right *ngIf="isOpenChoice" (click)="displayCheckBox()"></ion-icon>
-
-    <ion-item color="finishers" *ngIf="isOpenChoice">
-      <ion-label>Non Permanent</ion-label>
-      <ion-toggle></ion-toggle>
-    </ion-item>
-    <ion-item color="finishers" *ngIf="isOpenChoice">
-      <ion-label>Permanent</ion-label>
-      <ion-toggle></ion-toggle>
-    </ion-item>
-
   </ion-toolbar>
 </ion-footer>

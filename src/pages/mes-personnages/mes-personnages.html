@@ -26,7 +26,7 @@
       <ion-segment-button value="equipment">
         Stuff
       </ion-segment-button>
-      <ion-segment-button value="inventory">
+      <ion-segment-button value="inventory" (click)="getInventory()">
         Sacs
       </ion-segment-button>
 
@@ -41,66 +41,6 @@
   <div [ngSwitch]="selectedCategory" *ngIf="selectedCharacter != undefined">
 
     <div  *ngSwitchCase="'core'">
-
-      <!-- <ion-card class="character">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-4>
-              <ion-item class="race">
-                 <img src="assets/img/{{CharacterRace}}.png">
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-              <ion-item class="custom-class-divider">
-              <h2>{{CharacterProfession}}</h2>
-            </ion-item>
-            </ion-col>
-            <ion-col col-4>
-              <ion-item>
-                <ion-icon name="md-{{CharacterGenre}}" item-right></ion-icon>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-6>
-              <ion-item class="custom-class-divider" text-wrap>
-              <h2><b>Titre : </b>{{CharacterTitle}}</h2>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-              <ion-item class="item-right">
-              <h2><b>Niveau : </b>{{CharacterLevel}}</h2>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-12>
-              <ion-item *ngFor="let guild of CharacterGuild" class="custom-class-divider" text-wrap>
-                <h2><b>Guilde représentée : </b>{{guild.name}} , [{{guild.tag}}]</h2>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-6>
-              <ion-item class="custom-class-divider">
-              <h2><b>Age : </b>{{CharacterAge}} jours</h2>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-              <ion-item class="custom-class-divider">
-              <h2>{{CharacterDeaths}} <b>morts</b></h2>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-12>
-              <ion-item class="custom-class-divider">
-              <h2><b>Création : </b>{{CharacterCreation}}</h2>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card> -->
 
       <ion-card class="character">
         <ion-grid>
@@ -117,7 +57,7 @@
             </ion-col>
             <ion-col col-3>
               <ion-item class="race">
-                 <h2>{{CharacterLevel}}</h2>
+                 <ion-badge color="red-lighten-1">{{CharacterLevel}}</ion-badge>
               </ion-item>
             </ion-col>
             <ion-col col-3>
@@ -183,6 +123,33 @@
 
   </ion-card>
 </ion-list>
+
+<div *ngSwitchCase="'inventory'">
+
+  <ion-item-group *ngFor="let bag of CharacterInventory">
+      <ion-item-divider color="red-lighten-1">
+        <ion-avatar item-left>
+          <img [src]="bag.BagsDetails.icon">
+        </ion-avatar>
+        <h2>{{bag.BagsDetails.name}}</h2>
+        <p>{{bag.BagsDetails.details.size}} emplacements</p>
+      </ion-item-divider>
+      <ion-grid>
+        <ion-row wrap>
+          <ion-col col-3 *ngFor="let licorne of bag.content">
+            <ion-avatar *ngIf="licorne.count != null" item-left>
+              <img class="img-round" [src]="licorne.itemDetails?.icon" (click)="openItemDescription(licorne.itemDetails , $event)">
+            </ion-avatar>
+            <ion-item *ngIf="licorne.count == null" style="background-color : transparent">
+               <h2 style="color: white">Vide</h2>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+  </ion-item-group>
+
+</div>
 
 </div>
 
