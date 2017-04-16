@@ -14,7 +14,7 @@ import {MesGuildesPage} from '../pages/mes-guildes/mes-guildes';
 import {FinishersPage} from '../pages/finishers/finishers';
 import {MyWalletPage} from '../pages/my-wallet/my-wallet';
 import {MinisPage} from '../pages/minis/minis';
-import {PopOverItemPage} from '../pages/pop-over-item/pop-over-item'
+import {PopOverItemPage} from '../pages/pop-over-item/pop-over-item';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

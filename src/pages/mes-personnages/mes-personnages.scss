@@ -30,7 +30,7 @@ page-mes-personnages {
   {
     border-radius: 10px;
   }
-  
+
   .character
   {
     background: url('../assets/img/personnage.jpg') no-repeat center center fixed;
@@ -118,6 +118,16 @@ page-mes-personnages {
 
   }
 
+}
+
+.loading-md .loading-wrapper {
+    padding: 24px;
+    max-width: 280px;
+    max-height: 90%;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+    box-shadow: none;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');

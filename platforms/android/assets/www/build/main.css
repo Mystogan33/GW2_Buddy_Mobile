@@ -42398,6 +42398,10 @@ page-mes-personnages .segment-button.segment-activated {
   border-color: white !important;
 }
 
+page-mes-personnages .img-round {
+  border-radius: 10px;
+}
+
 page-mes-personnages .character {
   background: url("../assets/img/personnage.jpg") no-repeat center center fixed;
   -ms-background-size: cover;
@@ -42417,7 +42421,8 @@ page-mes-personnages .character .label-wp {
 }
 
 page-mes-personnages .character img {
-  width: auto;
+  height: 30px;
+  width: 30px;
 }
 
 page-mes-personnages .character ion-item {
@@ -42725,4 +42730,26 @@ page-pageAccueil ion-content {
 
 .alertDanger-title button.alert-button {
   color: #e53935;
+}
+
+page-pop-over-item .no-padding {
+  padding: 0px;
+}
+
+.item-md.item-block .item-inner {
+  padding-right: 0px;
+}
+
+.popover-md .popover-content {
+  width: 90%;
+  min-width: 0;
+  min-height: 0;
+  max-height: 90%;
+  height: 40%;
+  border-radius: 2px;
+  color: #000;
+  background: #ef5350;
+  box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
 }

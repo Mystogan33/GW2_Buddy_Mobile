@@ -42471,6 +42471,16 @@ page-mes-personnages ion-content {
   background-size: cover;
 }
 
+.loading-md .loading-wrapper {
+  padding: 24px;
+  max-width: 280px;
+  max-height: 90%;
+  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  box-shadow: none;
+}
+
 page-minis ion-navbar ion-title {
   text-align: center;
 }

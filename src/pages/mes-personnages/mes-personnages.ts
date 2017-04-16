@@ -45,9 +45,11 @@ export class MesPersonnagesPage {
     return new Promise((resolve, reject) => {
 
       let loading = this.loadingCtrl.create({
-
-        spinner : 'crescent',
-        content: 'Chargement des personnages...'
+        spinner: 'hide',
+        content: `
+        <div style="background-color: transparent ; background : transparent">
+          <img src="assets/img/loader.gif">
+        </div>`
       });
 
       loading.present();
@@ -57,9 +59,12 @@ export class MesPersonnagesPage {
         data => {
 
           this.characters = data;
-          resolve(this.characters);
 
-          loading.dismiss();
+          setTimeout(() => {
+            loading.dismiss();
+            resolve(this.characters);
+          }, 2000);
+
 
         },
 
@@ -86,12 +91,6 @@ export class MesPersonnagesPage {
   }
 
   getCharacterInformations() {
-
-    let loading = this.loadingCtrl.create({
-
-      spinner : 'crescent',
-      content: 'Chargement du personnage...'
-    });
 
     this.serv.getCharacterInformations(this.selectedCharacter).subscribe(
 
