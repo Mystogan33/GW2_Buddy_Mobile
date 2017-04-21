@@ -27,10 +27,13 @@ export class MesGuildesPage {
 
     return new Promise((resolve, reject) => {
 
-        let loading = this.loadingCtrl.create({
-          spinner: 'crescent',
-          content: 'Chargement des guildes...'
-        });
+      let loading = this.loadingCtrl.create({
+        spinner: 'hide',
+        content: `
+        <div style="background-color: transparent ; background : transparent">
+          <img src="assets/img/loader.gif">
+        </div>`
+      });
 
         loading.present();
 

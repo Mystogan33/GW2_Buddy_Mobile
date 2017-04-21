@@ -56,8 +56,21 @@ export class GW2APIProvider {
 
   }
 
-  getEquipmentInformations(id) : Observable<any> {
-    return this.http.get('https://api.guildwars2.com/v2/items/'+id)
+  // Inventaire
+  getInventory(character) {
+    return this.http.get('https://api.guildwars2.com/v2/characters/'+character+'/inventory?access_token='+this.appKey)
+    .map(res => res.json());
+  }
+
+  getItemInformations(idItem): Observable<any> {
+    return this.http.get('https://api.guildwars2.com/v2/items/'+idItem)
+    .map(res => res.json());
+  }
+
+  // Stuff
+  getStuff(character)
+  {
+    return this.http.get('https://api.guildwars2.com/v2/characters/'+character+'/equipment?access_token='+this.appKey)
     .map(res => res.json());
   }
 
@@ -92,16 +105,6 @@ export class GW2APIProvider {
 
   getMinisInformation(idMinis): Observable<any> {
     return this.http.get('https://api.guildwars2.com/v2/minis/'+idMinis+'?access_token='+this.appKey)
-    .map(res => res.json());
-  }
-
-  getInventory(character) {
-    return this.http.get('https://api.guildwars2.com/v2/characters/'+character+'/inventory?access_token='+this.appKey)
-    .map(res => res.json());
-  }
-
-  getItemInformations(idItem): Observable<any> {
-    return this.http.get('https://api.guildwars2.com/v2/items/'+idItem)
     .map(res => res.json());
   }
 

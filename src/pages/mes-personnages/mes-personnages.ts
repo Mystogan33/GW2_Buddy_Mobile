@@ -264,4 +264,24 @@ export class MesPersonnagesPage {
       popover.present({ev: event});
     }
 
+    getStuff()
+    {
+      this.serv.getStuff(this.selectedCharacter).subscribe(
+
+        data => {
+
+        let stuff = data.equipment;
+
+        this.CharacterEquipment = data.equipment;
+
+        },
+
+        err => {
+
+          alert(err);
+
+        },
+      );
+    }
+
   }
